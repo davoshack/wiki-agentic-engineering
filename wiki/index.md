@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-05-22
+updated: 2026-05-23
 ---
 
 # Index
@@ -14,15 +14,17 @@ question, read this first to find relevant pages, then drill into them.
 
 ## Areas
 
-*Standing domains of life. None yet — created as sources arrive.*
+- [[agentic-engineering]] — the practice of developing software with the help of coding agents; the standing domain the wiki is built around.
 
 ## Topics
 
-*Concepts, frameworks, techniques, practices. None yet.*
+- [[coding-agents]] — what an agent is (tools in a loop), why code execution is the defining capability, and how this differs from vibe coding.
+- [[economics-of-code]] — the cost of producing code has collapsed; the cost of producing *good* code (9-dimension checklist) has not; old engineering intuitions are due for an overhaul.
+- [[hoarding-working-examples]] — keep a personal collection of runnable code that proves what you know how to do, and recombine those examples in agent prompts.
 
 ## People
 
-*Experts, authors, or people in Juan's life. None yet.*
+- [[simon-willison]] — author of *Agentic Engineering Patterns*; practitioner-oriented, definitionally disciplined, frames many patterns as extensions of pre-LLM craft.
 
 ## Syntheses
 
@@ -30,4 +32,6 @@ question, read this first to find relevant pages, then drill into them.
 
 ## Sources
 
-*One summary page per ingested source. None yet — drop a source in `raw/` to begin.*
+- [[2026-05-23-what-is-agentic-engineering]] — Simon Willison, *Agentic Engineering Patterns* Ch. 1. Defines agentic engineering, agent, and coding agent; positions against vibe coding.
+- [[2026-05-23-writing-code-is-cheap-now]] — Simon Willison, *Agentic Engineering Patterns* Ch. 2. The cost of code has dropped; the cost of *good* code hasn't; lists 9 dimensions of good code.
+- [[2026-05-23-hoard-things-you-know-how-to-do]] — Simon Willison, *Agentic Engineering Patterns* Ch. 3. Hoard working examples; recombine them in agent prompts (worked OCR-PDF example).
