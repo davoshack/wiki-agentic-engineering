@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "fef8cdf08fa8595a",
+        "id": "2b8327aebb4e8acd",
         "type": "tabs",
         "children": [
           {
-            "id": "42ffeb03ec933ebd",
+            "id": "6d9d0d85fcc817fc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "wiki/sources/2026-05-23-hoard-things-you-know-how-to-do.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "2026-05-23-hoard-things-you-know-how-to-do"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 282.5
+    "width": 417.5
   },
   "right": {
     "id": "428d1d1876e1680a",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "wiki/sources/2026-05-23-hoard-things-you-know-how-to-do.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for CLAUDE"
+              "title": "Backlinks for 2026-05-23-hoard-things-you-know-how-to-do"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "wiki/sources/2026-05-23-hoard-things-you-know-how-to-do.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from CLAUDE"
+              "title": "Outgoing links from 2026-05-23-hoard-things-you-know-how-to-do"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "wiki/sources/2026-05-23-hoard-things-you-know-how-to-do.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of CLAUDE"
+              "title": "Outline of 2026-05-23-hoard-things-you-know-how-to-do"
             }
           }
         ]
@@ -170,9 +170,28 @@
       "marp:Marp: Open Preview": false
     }
   },
-  "active": "42ffeb03ec933ebd",
+  "active": "1e124ef2172210b6",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-05-23 18.37.07.excalidraw.md",
+    "wiki/sources/2026-05-23-hoard-things-you-know-how-to-do.md",
+    "Excalidraw",
+    "raw/Hoard things you know how to do - Agentic Engineering Patterns.md",
+    "Untitled.canvas",
+    "README.md",
     "CLAUDE.md",
-    "README.md"
+    "wiki/overview.md",
+    "wiki/index.md",
+    "log.md",
+    "wiki/topics/coding-agents.md",
+    "wiki/sources/2026-05-23-writing-code-is-cheap-now.md",
+    "wiki/topics/hoarding-working-examples.md",
+    "wiki/topics/economics-of-code.md",
+    "wiki/areas/agentic-engineering.md",
+    "wiki/sources/2026-05-23-what-is-agentic-engineering.md",
+    "wiki/people/simon-willison.md",
+    "Clippings/AI should help us produce better code - Agentic Engineering Patterns.md",
+    "raw/Writing code is cheap now - Agentic Engineering Patterns.md",
+    "raw/What is agentic engineering? - Agentic Engineering Patterns.md",
+    "Clippings"
   ]
 }
