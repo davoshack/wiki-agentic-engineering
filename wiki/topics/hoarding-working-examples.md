@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, prompting-patterns, hoarding, recombination]
+tags: [agentic-engineering, prompting-patterns, hoarding, recombination, exploratory-prototyping]
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 2
+sources: 3
 ---
 
 # Hoarding working examples
@@ -45,6 +45,8 @@ All three are concrete instances of the agent-loop definition in [[coding-agents
 
 The hoarding habit is amplified by, and amplifies, the cost shift described in [[economics-of-code]]. Because prototypes are now cheap to spin up ("fire off a prompt anyway"), the hoard grows faster; because the hoard exists, future prompts can produce better results from the same effort. The two patterns reinforce each other.
 
+**Exploratory prototyping** (from [[2026-05-23-ai-should-help-us-produce-better-code]]) is a particularly clean instance of this loop. When you spin up a load-test simulation to prove a tech choice fits, you get two things at once: the *decision* (is Redis a good fit?) and a working example that demonstrates how to wire up that kind of simulation — which becomes a hoardable artifact for the next time a similar question comes up. And [[compound-engineering]] is the parallel pattern for *instructions* (what the agent should do) the way hoarding is for *artifacts* (what working code looks like); the two stack.
+
 ## Open questions
 
 - How should a hoard be *organized* so an agent can navigate it efficiently? Public/searchable (Willison's approach) vs. local-only have different tradeoffs.
@@ -56,3 +58,4 @@ The hoarding habit is amplified by, and amplifies, the cost shift described in [
 
 - [[2026-05-23-hoard-things-you-know-how-to-do]]
 - [[2026-05-23-writing-code-is-cheap-now]]
+- [[2026-05-23-ai-should-help-us-produce-better-code]]

@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, economics, habits, good-code]
+tags: [agentic-engineering, economics, habits, good-code, technical-debt, exploratory-prototyping]
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 2
+sources: 3
 ---
 
 # Economics of code
@@ -44,6 +44,17 @@ Coding agents can help with most of this, but the human driving them remains res
 
 Willison is explicit that the new habits to replace the old intuitions are still being worked out across the industry — including by him. One concrete heuristic he offers: **"fire off a prompt anyway"** — any time the old instinct says *don't build that, it's not worth the time*, run it as an async agent session anyway. The downside is a few wasted tokens; the upside is sometimes a working prototype you wouldn't have had. This is the same mechanism that feeds the practice of [[hoarding-working-examples]] — cheap experiments become hoardable artifacts.
 
+### Spending the surplus on quality, not noise
+
+In [[2026-05-23-ai-should-help-us-produce-better-code]], Willison sharpens the prescription: the cheap-code surplus should be spent *raising quality*, not normalizing slop. Two concrete uses he names:
+
+- **Eliminating "simple but time-consuming" technical debt.** A whole class of debt (bad API shapes that need many call-site changes, poor naming, duplicate-but-divergent functionality, oversized files) historically gets punted because it can't compete with urgent work for human time. Agents are ideal for it. *"The cost of these code improvements has dropped so low that we can afford a zero tolerance attitude to minor code smells and inconveniences."* The workflow lives in [[refactoring-with-agents]].
+- **Exploratory prototyping for better technology choices.** Much technical debt originates upstream of any code — bad planning, missed options, picking the wrong tool. Coding agents make it cheap to *prove* a tech choice fits by wiring up a simulation and running a load test (Willison's worked example: "Is Redis a good choice for the activity feed on a site which expects thousands of concurrent users?"). Cheap enough to run **multiple experiments in parallel** and pick the winner — and the resulting prototype is then a hoardable artifact (see [[hoarding-working-examples]]).
+
+LLMs also help by surfacing options the human didn't consider, and tend to suggest **[Boring Technology](https://boringtechnology.club/)** because it dominates their training data — which Willison frames as a feature: boring is usually what works.
+
+The bigger payoff is the framing: small quality improvements **compound**. The mechanism for making them stick across agent runs is [[compound-engineering]] — end each project with a retrospective that updates the instructions future agents will read. *"Coding agents mean we can finally have both"* — quality *and* shipping.
+
 ## Open questions
 
 - Which old intuitions are *actually* wrong now, and which are still load-bearing? Default-yes on every refactor is presumably not the answer either.
@@ -55,3 +66,4 @@ Willison is explicit that the new habits to replace the old intuitions are still
 
 - [[2026-05-23-writing-code-is-cheap-now]]
 - [[2026-05-23-what-is-agentic-engineering]]
+- [[2026-05-23-ai-should-help-us-produce-better-code]]

@@ -39,8 +39,9 @@ The second chapter of *Agentic Engineering Patterns*. Argues that coding agents 
 
 - Direct continuation of [[2026-05-23-what-is-agentic-engineering]] — that chapter defined the practice; this one explains the economic shift that makes the practice consequential.
 - The cost-collapse thesis and the "good code" decomposition are the substance of [[economics-of-code]].
+- Directly extended by [[2026-05-23-ai-should-help-us-produce-better-code]], which prescribes how to *spend* the cheap-code surplus: the technical-debt class covered in [[refactoring-with-agents]] and the retrospective-driven feedback loop named [[compound-engineering]] are the two concrete uses.
 - The "fire off a prompt anyway" heuristic is itself a habit — connects to [[hoarding-working-examples]] (because the cheap experiment, if it works, becomes a hoardable artifact).
-- The point that coding agents *can* learn (raised in chapter 1) plus the point that good code requires verification (this chapter) together motivate building feedback loops into the agent harness.
+- The point that coding agents *can* learn (raised in chapter 1) plus the point that good code requires verification (this chapter) together motivate building feedback loops into the agent harness — the named workflow is [[compound-engineering]].
 - Author: [[simon-willison]].
 
 ## Raw file

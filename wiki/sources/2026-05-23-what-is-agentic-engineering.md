@@ -29,7 +29,7 @@ The opening chapter of Simon Willison's *Agentic Engineering Patterns* guide. De
 
 - Establishes the core vocabulary for the entire wiki — see [[agentic-engineering]] (the area) and [[coding-agents]] (the topic page that consolidates the agent-loop definition and the vibe-coding distinction).
 - The "what's left for humans" framing sets up [[economics-of-code]], which is the subject of [[2026-05-23-writing-code-is-cheap-now]].
-- The point that agents can learn (through updated instructions and harnesses) connects to [[hoarding-working-examples]] — the harness-level memory pattern in [[2026-05-23-hoard-things-you-know-how-to-do]].
+- The point that agents *can* learn (through deliberately updated instructions and harnesses) finds its named home in [[compound-engineering]] — the retrospective-driven loop from [[2026-05-23-ai-should-help-us-produce-better-code]]. The complementary artifact-level pattern is [[hoarding-working-examples]] from [[2026-05-23-hoard-things-you-know-how-to-do]].
 - Author: [[simon-willison]].
 
 ## Raw file

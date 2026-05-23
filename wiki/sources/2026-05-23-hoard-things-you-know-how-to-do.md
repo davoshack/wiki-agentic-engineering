@@ -30,6 +30,7 @@ The third chapter of *Agentic Engineering Patterns*. Frames a pre-LLM piece of c
 
 - Concrete instance of the "fire off a prompt anyway" heuristic from [[2026-05-23-writing-code-is-cheap-now]] — the hoard exists *because* prototypes are now cheap to spin up, and *for* future agent reuse.
 - The recombination pattern is the substance of [[hoarding-working-examples]].
+- Parallel pattern: [[compound-engineering]] (from [[2026-05-23-ai-should-help-us-produce-better-code]]) does for *instructions* (how the agent should behave) what hoarding does for *artifacts* (working code). Both turn one-time effort into permanent leverage; they stack.
 - Connects to [[coding-agents]]: the prompts above illustrate the tool-loop definition concretely — agents can invoke `curl`, filesystem search, and `git clone` as tools toward a goal.
 - Author: [[simon-willison]].
 

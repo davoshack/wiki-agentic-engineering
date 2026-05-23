@@ -4,7 +4,7 @@ tags: [agentic-engineering, author, primary-source]
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 3
+sources: 5
 ---
 
 # Simon Willison
@@ -31,3 +31,5 @@ Willison's writing is the wiki's initial entry point into agentic engineering. H
 - [[2026-05-23-what-is-agentic-engineering]]
 - [[2026-05-23-writing-code-is-cheap-now]]
 - [[2026-05-23-hoard-things-you-know-how-to-do]]
+- [[2026-05-23-ai-should-help-us-produce-better-code]]
+- [[2026-05-23-anti-patterns-things-to-avoid]]

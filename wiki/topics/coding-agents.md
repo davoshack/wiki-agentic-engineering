@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, definitions, coding-agents, vibe-coding]
+tags: [agentic-engineering, definitions, coding-agents, vibe-coding, async-agents]
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 3
+sources: 5
 ---
 
 # Coding agents
@@ -26,7 +26,11 @@ A **coding agent** is the special case where one of the available tools can exec
 
 A useful corollary: because the agent acts through tools, the *set of tools you expose to it* and *how well they work* directly shape what the agent can accomplish. Willison's prompts in [[2026-05-23-hoard-things-you-know-how-to-do]] illustrate this — he reaches for `curl` rather than a built-in WebFetch when he wants raw HTML, and he gives the agent filesystem paths or `git` access when he wants it to consult prior work. The agent's capability is the loop *plus* its tools.
 
-A related point: LLMs by themselves don't learn from past mistakes, but coding agents *can* — provided the human deliberately updates the instructions and the tool harness based on what each round teaches.
+A related point: LLMs by themselves don't learn from past mistakes, but coding agents *can* — provided the human deliberately updates the instructions and the tool harness based on what each round teaches. The named workflow for doing this is [[compound-engineering]].
+
+### Synchronous vs. asynchronous
+
+Within coding agents, [[simon-willison]] singles out **asynchronous coding agents** as a category worth using deliberately. Named examples: [Gemini Jules](https://jules.google.com/), [OpenAI Codex web](https://developers.openai.com/codex/cloud/), [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web). The async flavor lets the human fire off work — typically a refactor or an exploratory prototype — without surrendering their laptop's foreground attention to it; results come back as a pull request to evaluate. The synchronous local flavor (Claude Code CLI, etc.) is what you use when you want to be in the loop. The patterns that make heaviest use of the async mode are in [[refactoring-with-agents]] and the exploratory-prototyping section of [[economics-of-code]].
 
 ### Coding agents ≠ vibe coding
 
@@ -50,3 +54,5 @@ Because typing code is no longer the constraint, the human's role in the loop is
 - [[2026-05-23-what-is-agentic-engineering]]
 - [[2026-05-23-writing-code-is-cheap-now]]
 - [[2026-05-23-hoard-things-you-know-how-to-do]]
+- [[2026-05-23-ai-should-help-us-produce-better-code]]
+- [[2026-05-23-anti-patterns-things-to-avoid]]
