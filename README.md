@@ -22,3 +22,4 @@ The wiki is the Juan's personal **Agentic Engineering knowledge-base** oriented:
 
 The goal is to keep an updated information source with the last advances, techniques, methodologies and implementations.
 
+![[Pasted image 20260523212001.png]]

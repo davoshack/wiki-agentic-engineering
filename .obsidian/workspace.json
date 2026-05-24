@@ -13,22 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
-            }
-          },
-          {
-            "id": "9b0553c8c4b5830f",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "README"
             }
           }
         ]
@@ -63,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#agentic-engineering",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -104,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for CLAUDE"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -123,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from CLAUDE"
+              "title": "Outgoing links from README"
             }
           },
           {
@@ -152,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of CLAUDE"
+              "title": "Outline of README"
             }
           },
           {
@@ -193,6 +183,10 @@
   },
   "active": "c111b85ffc30ae4b",
   "lastOpenFiles": [
+    "Pasted image 20260523212001.png",
+    "wiki/index.md",
+    "wiki/sources/2026-05-23-writing-code-is-cheap-now.md",
+    "CLAUDE.md",
     "raw/Subagents - Agentic Engineering Patterns.md",
     "wiki/topics/subagents.md",
     "wiki/topics/git-with-agents.md",
@@ -202,7 +196,6 @@
     "wiki/sources/2026-05-23-how-coding-agents-work.md",
     "raw/Using Git with coding agents - Agentic Engineering Patterns.md",
     "raw/How coding agents work - Agentic Engineering Patterns.md",
-    "CLAUDE.md",
     "README.md",
     "LLM Wiki Karpathy Pattern.md",
     "wiki/sources/2026-05-23-what-is-agentic-engineering.md",
@@ -211,16 +204,13 @@
     "wiki/topics/coding-agents.md",
     "wiki/people/simon-willison.md",
     "wiki/topics/compound-engineering.md",
-    "wiki/index.md",
     "wiki/topics/agent-code-review.md",
     "wiki/topics/refactoring-with-agents.md",
     "wiki/sources/2026-05-23-anti-patterns-things-to-avoid.md",
     "wiki/sources/2026-05-23-ai-should-help-us-produce-better-code.md",
     "raw/Anti-patterns things to avoid - Agentic Engineering Patterns.md",
     "wiki/sources/2026-05-23-hoard-things-you-know-how-to-do.md",
-    "Excalidraw/Drawing 2026-05-23 18.37.07.excalidraw.md",
     "Excalidraw",
-    "raw/Hoard things you know how to do - Agentic Engineering Patterns.md",
     "Untitled.canvas",
     "Clippings"
   ]
