@@ -1,15 +1,22 @@
-# Wiki Schema
+# Agentic Engineering Wiki
 
-##### Note
+### Note
 _This particular implementation was inspired by [Karpathy's LLM Wiki Pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)._
-For more references: _[Karpathy's X post](https://x.com/karpathy/status/2039805659525644595?s=20)_
-##### Software
+
+_For more references: [Karpathy's X post](https://x.com/karpathy/status/2039805659525644595?s=20)_
+
+### Software
+
 _Interfaz_
 - [Obsidian](https://obsidian.md/download)
+
 _LLM Agent_
 - [ Claude Code](https://code.claude.com/docs/en/quickstart)
-_Control Version
- - Github
+
+_Control Version_
+- Github
+
+---
 
 This file is the **operating manual** for this wiki. It tells the LLM agent how the wiki
 is structured, what the conventions are, and exactly what to do when ingesting a source,
