@@ -6,7 +6,7 @@ answering a query, or running a lint pass.
 
 Read this file at the start of every session before touching the wiki.
 
-The wiki is the Juan's personal **Agentic Engineering knowledge-base** oriented: it accumulates a structured and curated information about Agentic Engineering discipline — built up from articles, papers, books, videos, transcripts, and notes over time. See `README.md` for the philosophy behind the pattern.
+The wiki is the Juan's personal **Agentic Engineering knowledge-base** oriented: it accumulates a structured and curated information about Agentic Engineering discipline — built up from articles, papers, books, videos, transcripts, and notes over time. See [[LLM Wiki Karpathy Pattern]] for the philosophy behind the pattern.
 
 The goal is to keep an updated information source with the last advances, techniques, methodologies and implementations.
 
@@ -38,7 +38,7 @@ wiki-agentic-engineering/
     ├── index.md         # catalog of every page (content-oriented)
     ├── overview.md      # the evolving big-picture synthesis
     ├── sources/         # one summary page per ingested source
-    ├── areas/           # life domains (health, career, mindset, finances, relationships…)
+    ├── areas/           # standing domains within agentic engineering (the practice itself; later: tooling, evaluation, security, team workflow…)
     ├── topics/          # concepts, frameworks, techniques, practices
     ├── people/          # experts, authors, or people in Juan's life
     ├── syntheses/       # cross-cutting analyses, comparisons, answers worth keeping
@@ -49,22 +49,24 @@ When creating a new page, start from the matching file in `wiki/templates/` so f
 and section structure stay consistent. `templates/` is not part of the wiki's content —
 skip it when indexing, linting, or answering queries.
 
-A page goes in `areas/` if it's a standing domain of life, `topics/` if it's a concept or
-technique, `people/` if it's a person, `sources/` if it's a summary of one source, and
-`syntheses/` if it's a cross-cutting analysis or a query answer worth keeping. When unsure,
-prefer `topics/`.
+A page goes in `areas/` if it's a broad standing domain within agentic engineering (e.g.
+the practice itself, agent tooling, evaluation, security), `topics/` if it's a concept,
+framework, technique, or pattern (e.g. [[compound-engineering]], [[refactoring-with-agents]],
+[[economics-of-code]]), `people/` if it's a person (practitioner, author, researcher),
+`sources/` if it's a summary of one ingested source, and `syntheses/` if it's a
+cross-cutting analysis or a query answer worth keeping. When unsure, prefer `topics/`.
 
 ---
 
 ## Page conventions
 
-**Filenames.** kebab-case, descriptive, `.md`. e.g. `sleep-consistency.md`,
-`andrew-huberman.md`, `deliberate-practice.md`. Source pages are prefixed with the ingest
-date: `2026-05-22-why-we-sleep-ch3.md`.
+**Filenames.** kebab-case, descriptive, `.md`. e.g. `compound-engineering.md` (topic),
+`simon-willison.md` (person), `agentic-engineering.md` (area). Source pages are prefixed
+with the ingest date: `2026-05-23-what-is-agentic-engineering.md`.
 
-**Links.** Use Obsidian wikilinks: `[[sleep-consistency]]` or `[[sleep-consistency|sleep]]`
-for aliased text. Every page should link out to related pages and be linked to from at
-least one other page — no orphans.
+**Links.** Use Obsidian wikilinks: `[[compound-engineering]]` or
+`[[economics-of-code|the broader cost story]]` for aliased text. Every page should link out
+to related pages and be linked to from at least one other page — no orphans.
 
 **Frontmatter.** Every wiki page starts with YAML frontmatter so Obsidian's Dataview plugin
 can query it:
@@ -72,7 +74,7 @@ can query it:
 ```yaml
 ---
 type: area | topic | person | source | synthesis
-tags: [health, sleep]
+tags: [agentic-engineering, coding-agents]
 created: 2026-05-22
 updated: 2026-05-22
 status: stub | developing | mature      # how built-out the page is
@@ -94,14 +96,15 @@ Source pages add: `source_type: article | pdf | video | transcript | note | imag
 - *Synthesis pages*: the analysis itself — prose, comparison tables, or chart references —
   plus a `## Sources` section.
 
-**Tone.** Pages are about Juan and his learning. Write claims with their backing — attribute
-to a source where it matters ("Walker argues…", "a 2024 meta-analysis found…"), and flag
-uncertainty rather than smoothing it over.
+**Tone.** Pages are about Juan's learning of agentic engineering. Write claims with their
+backing — attribute to a source where it matters ("Willison argues…", "Shipper & Klaassen
+at Every describe…", "a recent benchmark found…"), and flag uncertainty rather than
+smoothing it over.
 
 **Contradictions.** When a new source disagrees with an existing claim, do not silently
-overwrite. Note both: e.g. *"Earlier filed under [[deliberate-practice]] from Source A;
-[[2026-05-22-...]] challenges this, arguing…"*. Surfacing tension is more valuable than
-false tidiness.
+overwrite. Note both: e.g. *"Earlier filed under [[economics-of-code]] from
+[[2026-05-23-writing-code-is-cheap-now]]; [[2026-XX-XX-some-future-source]] challenges
+this, arguing…"*. Surfacing tension is more valuable than false tidiness.
 
 ---
 
@@ -169,9 +172,9 @@ Chronological, append-only. Every entry starts with a consistent header so the l
 greppable — `grep "^## \[" log.md | tail -5` gives the recent timeline:
 
 ```
-## [2026-05-22] ingest | Why We Sleep — Ch. 3
-## [2026-05-22] query  | How does my sleep affect focus?
-## [2026-05-22] lint   | 2 contradictions, 1 orphan
+## [2026-05-23] ingest | Simon Willison, Agentic Engineering Patterns — Ch. 1
+## [2026-05-23] query  | What's the right workflow for async refactoring with agents?
+## [2026-05-23] lint   | 0 orphans, 0 contradictions, 3 forward-ref drifts
 ```
 
 Under each header, a few lines on what happened and which pages were affected.
