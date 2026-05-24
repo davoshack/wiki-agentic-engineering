@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, workflow, retrospectives, agent-instructions]
+tags: [agentic-engineering, workflow, retrospectives, agent-instructions, system-prompts]
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 1
+sources: 2
 ---
 
 # Compound engineering
@@ -26,6 +26,10 @@ Willison's framing in [[2026-05-23-ai-should-help-us-produce-better-code]] place
 
 This topic also connects to [[hoarding-working-examples]] from a different angle: hoarding is about accumulating *artifacts* (working code) for reuse; compound engineering is about accumulating *instructions* (how the agent should behave) for reuse. Both turn one-time effort into persistent leverage; they're complementary.
 
+### What "the instructions" actually are
+
+The mechanics view from [[agent-architecture]] makes this concrete: the **system prompt** is the surface compound engineering writes to. System prompts in real coding agents are routinely hundreds of lines (Willison links the [Codex system prompt](https://github.com/openai/codex/blob/rust-v0.114.0/codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md) as a public example). When a "compound step" produces a lesson worth keeping, it lands either there, in repo-level instruction files (`CLAUDE.md`, `AGENTS.md`) that the harness loads into context, or in the **tool harness** itself — new tools, refined tool descriptions, or changed defaults. The same channel governs how [[subagents|specialist subagents]] are configured (their custom system prompts and tools are exactly this kind of compounded knowledge applied at a per-role granularity).
+
 ## Open questions
 
 - What does a good "compound step" actually look like in practice? Is it a checklist, free-form notes, structured prompt updates? The Every post would be worth ingesting directly.
@@ -36,3 +40,4 @@ This topic also connects to [[hoarding-working-examples]] from a different angle
 ## Sources
 
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
+- [[2026-05-23-how-coding-agents-work]]

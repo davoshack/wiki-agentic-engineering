@@ -4,7 +4,7 @@ tags: [agentic-engineering, definitions, coding-agents, vibe-coding, async-agent
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 5
+sources: 6
 ---
 
 # Coding agents
@@ -25,6 +25,8 @@ Software that wraps an LLM in a tool-execution loop, including a tool that can r
 A **coding agent** is the special case where one of the available tools can execute code. Willison calls code execution *"the defining capability that makes agentic engineering possible"*: without it, an LLM's output is "of limited value"; with it, the agent can iterate toward software that demonstrably works rather than merely plausible-looking. Named examples ingested so far: [Claude Code](https://code.claude.com/), [OpenAI Codex](https://openai.com/codex/), [Gemini CLI](https://geminicli.com/).
 
 A useful corollary: because the agent acts through tools, the *set of tools you expose to it* and *how well they work* directly shape what the agent can accomplish. Willison's prompts in [[2026-05-23-hoard-things-you-know-how-to-do]] illustrate this — he reaches for `curl` rather than a built-in WebFetch when he wants raw HTML, and he gives the agent filesystem paths or `git` access when he wants it to consult prior work. The agent's capability is the loop *plus* its tools.
+
+For the mechanics under the hood — how the harness, system prompt, tokens, token caching, the tool-call protocol, and reasoning mode actually fit together — see [[agent-architecture]]. For how agents manage the **context-window** constraint that comes with all of this (dispatching fresh copies of themselves with new contexts), see [[subagents]].
 
 A related point: LLMs by themselves don't learn from past mistakes, but coding agents *can* — provided the human deliberately updates the instructions and the tool harness based on what each round teaches. The named workflow for doing this is [[compound-engineering]].
 
@@ -56,3 +58,4 @@ Because typing code is no longer the constraint, the human's role in the loop is
 - [[2026-05-23-hoard-things-you-know-how-to-do]]
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-23-anti-patterns-things-to-avoid]]
+- [[2026-05-23-how-coding-agents-work]]

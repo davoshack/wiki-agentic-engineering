@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, economics, habits, good-code, technical-debt, exploratory-prototyping]
+tags: [agentic-engineering, economics, habits, good-code, technical-debt, exploratory-prototyping, tokens]
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 3
+sources: 5
 ---
 
 # Economics of code
@@ -55,6 +55,15 @@ LLMs also help by surfacing options the human didn't consider, and tend to sugge
 
 The bigger payoff is the framing: small quality improvements **compound**. The mechanism for making them stick across agent runs is [[compound-engineering]] — end each project with a retrospective that updates the instructions future agents will read. *"Coding agents mean we can finally have both"* — quality *and* shipping.
 
+### The token-cost layer
+
+The cost story above is about *engineering time*. There is a second cost layer — **tokens** — that becomes visible once you look at the mechanics in [[agent-architecture]]. Providers charge per input *and* output token, and because LLMs are stateless, the full conversation history is replayed on every turn — so naive long sessions get expensive fast. Two design responses are now standard:
+
+- **Token caching.** Providers charge a lower rate for token prefixes they've recently processed. Coding agents are deliberately built to avoid mutating earlier conversation content so the cache stays warm. This is why long sessions remain affordable.
+- **Subagents.** Dispatching a fresh copy of the agent with a new context window keeps the parent's tokens free for the work that needs root context. Parallel subagents on cheaper/faster models (like Claude Haiku) trade root-context tokens for cheaper subagent tokens and serial latency for parallel latency. See [[subagents]] for the architectural pattern.
+
+These optimizations matter because the [[economics-of-code|cheap-code surplus]] depends on the *per-task* cost staying low. Without caching and subagents, the cost of code would creep back up at scale.
+
 ## Open questions
 
 - Which old intuitions are *actually* wrong now, and which are still load-bearing? Default-yes on every refactor is presumably not the answer either.
@@ -67,3 +76,5 @@ The bigger payoff is the framing: small quality improvements **compound**. The m
 - [[2026-05-23-writing-code-is-cheap-now]]
 - [[2026-05-23-what-is-agentic-engineering]]
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
+- [[2026-05-23-how-coding-agents-work]]
+- [[2026-05-23-subagents]]

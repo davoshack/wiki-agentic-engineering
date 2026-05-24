@@ -4,7 +4,7 @@ tags: [agentic-engineering, prompting-patterns, hoarding, recombination, explora
 created: 2026-05-23
 updated: 2026-05-23
 status: developing
-sources: 3
+sources: 4
 ---
 
 # Hoarding working examples
@@ -47,6 +47,8 @@ The hoarding habit is amplified by, and amplifies, the cost shift described in [
 
 **Exploratory prototyping** (from [[2026-05-23-ai-should-help-us-produce-better-code]]) is a particularly clean instance of this loop. When you spin up a load-test simulation to prove a tech choice fits, you get two things at once: the *decision* (is Redis a good fit?) and a working example that demonstrates how to wire up that kind of simulation — which becomes a hoardable artifact for the next time a similar question comes up. And [[compound-engineering]] is the parallel pattern for *instructions* (what the agent should do) the way hoarding is for *artifacts* (what working code looks like); the two stack.
 
+**Parallel subagents** (see [[subagents]]) make the "build many small experiments in parallel and keep the ones that work" loop fast enough that the hoard can grow noticeably faster than human serial attention allows. Combined with cheap models for the dispatched workers (Claude Haiku is Willison's named example), the cost of generating hoardable artifacts drops further.
+
 ## Open questions
 
 - How should a hoard be *organized* so an agent can navigate it efficiently? Public/searchable (Willison's approach) vs. local-only have different tradeoffs.
@@ -59,3 +61,4 @@ The hoarding habit is amplified by, and amplifies, the cost shift described in [
 - [[2026-05-23-hoard-things-you-know-how-to-do]]
 - [[2026-05-23-writing-code-is-cheap-now]]
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
+- [[2026-05-23-subagents]]
