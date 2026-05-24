@@ -1,0 +1,129 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": true,
+  "showMenuActions": true,
+  "showSuggestionIcons": true,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "biggerSearchResults": "mobile",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "rememberDeletedItems": false,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": true,
+    "rulePage": "folder"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "CLAUDE.md": {
+      "icon": "lucide-circle-arrow-out-down-left",
+      "color": "blue"
+    },
+    "Clippings": {
+      "icon": "lucide-clipboard-pen-line",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "color": "red"
+    },
+    "LLM Wiki Karpathy Pattern.md": {
+      "icon": "lucide-panel-bottom-open",
+      "color": "green"
+    },
+    "README.md": {
+      "icon": "lucide-square-dashed-bottom-code",
+      "color": "yellow"
+    },
+    "raw": {
+      "color": "green",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "icon": "💡"
+    },
+    "raw/assets": {
+      "icon": "lucide-layout-template",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "color": "yellow"
+    },
+    "wiki": {
+      "icon": "📓",
+      "color": "cyan",
+      "unsynced": [
+        "e151ae31278c542b"
+      ]
+    },
+    "wiki/areas": {
+      "icon": "lucide-book-open-text",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "color": "cyan"
+    },
+    "wiki/index.md": {
+      "icon": "🗂️",
+      "color": "orange"
+    },
+    "wiki/overview.md": {
+      "icon": "lucide-scan",
+      "color": "orange"
+    },
+    "wiki/people": {
+      "icon": "lucide-users",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "color": "cyan"
+    },
+    "wiki/sources": {
+      "icon": "lucide-table-of-contents",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "color": "cyan"
+    },
+    "wiki/syntheses": {
+      "icon": "lucide-align-horizontal-justify-center",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "color": "cyan"
+    },
+    "wiki/templates": {
+      "icon": "lucide-book-template",
+      "unsynced": [
+        "e151ae31278c542b"
+      ],
+      "color": "cyan"
+    },
+    "wiki/topics": {
+      "icon": "lucide-list-check",
+      "color": "cyan",
+      "unsynced": [
+        "e151ae31278c542b"
+      ]
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [],
+  "folderRules": []
+}
