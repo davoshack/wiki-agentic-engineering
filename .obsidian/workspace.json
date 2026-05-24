@@ -4,22 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7eb738f30c05f47a",
+        "id": "712bf6f044d27ada",
         "type": "tabs",
         "children": [
           {
-            "id": "c111b85ffc30ae4b",
+            "id": "ab1f8086cfac5bf7",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/app.json",
-                "bFile": ".obsidian/app.json",
-                "aRef": "HEAD",
-                "bRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: app.json  (Index)"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -219,29 +214,30 @@
       }
     ]
   },
-  "active": "c111b85ffc30ae4b",
+  "active": "ab1f8086cfac5bf7",
   "lastOpenFiles": [
+    "wiki/people/simon-willison.md",
+    "wiki/sources/2026-05-23-what-is-agentic-engineering.md",
+    "wiki/index.md",
+    "wiki/sources/2026-05-23-subagents.md",
+    "wiki/areas/agentic-engineering.md",
     "graph.png",
     "LLM Wiki Karpathy Pattern.md",
     "wiki/overview.md",
     "README.md",
     "CLAUDE.md",
-    "wiki/index.md",
     "wiki/sources/2026-05-23-writing-code-is-cheap-now.md",
     "raw/Subagents - Agentic Engineering Patterns.md",
     "wiki/topics/subagents.md",
     "wiki/topics/git-with-agents.md",
     "wiki/topics/agent-architecture.md",
-    "wiki/sources/2026-05-23-subagents.md",
     "wiki/sources/2026-05-23-using-git-with-coding-agents.md",
     "wiki/sources/2026-05-23-how-coding-agents-work.md",
     "raw/Using Git with coding agents - Agentic Engineering Patterns.md",
     "raw/How coding agents work - Agentic Engineering Patterns.md",
-    "wiki/sources/2026-05-23-what-is-agentic-engineering.md",
     "Pasted image 20260523191453.png",
     "raw/What is agentic engineering? - Agentic Engineering Patterns.md",
     "wiki/topics/coding-agents.md",
-    "wiki/people/simon-willison.md",
     "wiki/topics/compound-engineering.md",
     "wiki/topics/agent-code-review.md",
     "wiki/topics/refactoring-with-agents.md",
