@@ -1,75 +1,210 @@
-# LLM Wiki
+# Wiki Schema
 
-A pattern for building personal knowledge bases using LLMs.
+##### Note
+_This particular implementation was inspired by [Karpathy's LLM Wiki Pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)._
+For more references: _[Karpathy's X post](https://x.com/karpathy/status/2039805659525644595?s=20)_
+##### Software
+_Interfaz_
+- [Obsidian](https://obsidian.md/download)
+_LLM Agent_
+- [ Claude Code](https://code.claude.com/docs/en/quickstart)
+_Control Version
+ - Github
 
-This is an idea file, it is designed to be copy pasted to your own LLM Agent (e.g. OpenAI Codex, Claude Code, OpenCode / Pi, or etc.). Its goal is to communicate the high level idea, but your agent will build out the specifics in collaboration with you.
+This file is the **operating manual** for this wiki. It tells the LLM agent how the wiki
+is structured, what the conventions are, and exactly what to do when ingesting a source,
+answering a query, or running a lint pass.
 
-## The core idea
+Read this file at the start of every session before touching the wiki.
 
-Most people's experience with LLMs and documents looks like RAG: you upload a collection of files, the LLM retrieves relevant chunks at query time, and generates an answer. This works, but the LLM is rediscovering knowledge from scratch on every question. There's no accumulation. Ask a subtle question that requires synthesizing five documents, and the LLM has to find and piece together the relevant fragments every time. Nothing is built up. NotebookLM, ChatGPT file uploads, and most RAG systems work this way.
+The wiki is the Juan's personal **Agentic Engineering knowledge-base** oriented: it accumulates a structured and curated information about Agentic Engineering discipline — built up from articles, papers, books, videos, transcripts, and notes over time. See `README.md` for the philosophy behind the pattern.
 
-The idea here is different. Instead of just retrieving from raw documents at query time, the LLM **incrementally builds and maintains a persistent wiki** — a structured, interlinked collection of markdown files that sits between you and the raw sources. When you add a new source, the LLM doesn't just index it for later retrieval. It reads it, extracts the key information, and integrates it into the existing wiki — updating entity pages, revising topic summaries, noting where new data contradicts old claims, strengthening or challenging the evolving synthesis. The knowledge is compiled once and then *kept current*, not re-derived on every query.
+The goal is to keep an updated information source with the last advances, techniques, methodologies and implementations.
 
-This is the key difference: **the wiki is a persistent, compounding artifact.** The cross-references are already there. The contradictions have already been flagged. The synthesis already reflects everything you've read. The wiki keeps getting richer with every source you add and every question you ask.
+---
+## Roles
 
-You never (or rarely) write the wiki yourself — the LLM writes and maintains all of it. You're in charge of sourcing, exploration, and asking the right questions. The LLM does all the grunt work — the summarizing, cross-referencing, filing, and bookkeeping that makes a knowledge base actually useful over time. In practice, I have the LLM agent open on one side and Obsidian open on the other. The LLM makes edits based on our conversation, and I browse the results in real time — following links, checking the graph view, reading the updated pages. Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase.
+- **Juan** sources material, directs exploration, asks questions, decides what matters.
+  He reads the wiki; he rarely writes it.
+- **The LLM (you)** owns the `wiki/` directory entirely. You read raw sources, write and
+  update pages, maintain cross-references, keep the index and log current. You do the
+  bookkeeping so the wiki stays maintained.
+- **Obsidian** is the IDE. Juan browses the wiki in Obsidian while you edit. Everything
+  you write must render well there (wikilinks, graph view, frontmatter).
 
-This can apply to a lot of different contexts. A few examples:
+You never modify anything in `raw/`. That is the immutable source of truth.
 
-- **Personal**: tracking your own goals, health, psychology, self-improvement — filing journal entries, articles, podcast notes, and building up a structured picture of yourself over time.
-- **Research**: going deep on a topic over weeks or months — reading papers, articles, reports, and incrementally building a comprehensive wiki with an evolving thesis.
-- **Reading a book**: filing each chapter as you go, building out pages for characters, themes, plot threads, and how they connect. By the end you have a rich companion wiki. Think of fan wikis like [Tolkien Gateway](https://tolkiengateway.net/wiki/Main_Page) — thousands of interlinked pages covering characters, places, events, languages, built by a community of volunteers over years. You could build something like that personally as you read, with the LLM doing all the cross-referencing and maintenance.
-- **Business/team**: an internal wiki maintained by LLMs, fed by Slack threads, meeting transcripts, project documents, customer calls. Possibly with humans in the loop reviewing updates. The wiki stays current because the LLM does the maintenance that no one on the team wants to do.
-- **Competitive analysis, due diligence, trip planning, course notes, hobby deep-dives** — anything where you're accumulating knowledge over time and want it organized rather than scattered.
+---
 
-## Architecture
+## Directory layout
 
-There are three layers:
+```
+wiki-agentic-engineering/
+├── README.md            # the pattern (reference only)
+├── CLAUDE.md            # this file — the schema
+├── log.md               # chronological, append-only activity log
+├── raw/                 # immutable sources — you READ, never WRITE
+│   └── assets/          # downloaded images referenced by sources
+└── wiki/                # LLM-owned — you create and maintain everything here
+    ├── index.md         # catalog of every page (content-oriented)
+    ├── overview.md      # the evolving big-picture synthesis
+    ├── sources/         # one summary page per ingested source
+    ├── areas/           # life domains (health, career, mindset, finances, relationships…)
+    ├── topics/          # concepts, frameworks, techniques, practices
+    ├── people/          # experts, authors, or people in Juan's life
+    ├── syntheses/       # cross-cutting analyses, comparisons, answers worth keeping
+    └── templates/       # blank page templates (also usable by Obsidian's Templates plugin)
+```
 
-**Raw sources** — your curated collection of source documents. Articles, papers, images, data files. These are immutable — the LLM reads from them but never modifies them. This is your source of truth.
+When creating a new page, start from the matching file in `wiki/templates/` so frontmatter
+and section structure stay consistent. `templates/` is not part of the wiki's content —
+skip it when indexing, linting, or answering queries.
 
-**The wiki** — a directory of LLM-generated markdown files. Summaries, entity pages, concept pages, comparisons, an overview, a synthesis. The LLM owns this layer entirely. It creates pages, updates them when new sources arrive, maintains cross-references, and keeps everything consistent. You read it; the LLM writes it.
+A page goes in `areas/` if it's a standing domain of life, `topics/` if it's a concept or
+technique, `people/` if it's a person, `sources/` if it's a summary of one source, and
+`syntheses/` if it's a cross-cutting analysis or a query answer worth keeping. When unsure,
+prefer `topics/`.
 
-**The schema** — a document (e.g. CLAUDE.md for Claude Code or AGENTS.md for Codex) that tells the LLM how the wiki is structured, what the conventions are, and what workflows to follow when ingesting sources, answering questions, or maintaining the wiki. This is the key configuration file — it's what makes the LLM a disciplined wiki maintainer rather than a generic chatbot. You and the LLM co-evolve this over time as you figure out what works for your domain.
+---
 
-## Operations
+## Page conventions
 
-**Ingest.** You drop a new source into the raw collection and tell the LLM to process it. An example flow: the LLM reads the source, discusses key takeaways with you, writes a summary page in the wiki, updates the index, updates relevant entity and concept pages across the wiki, and appends an entry to the log. A single source might touch 10-15 wiki pages. Personally I prefer to ingest sources one at a time and stay involved — I read the summaries, check the updates, and guide the LLM on what to emphasize. But you could also batch-ingest many sources at once with less supervision. It's up to you to develop the workflow that fits your style and document it in the schema for future sessions.
+**Filenames.** kebab-case, descriptive, `.md`. e.g. `sleep-consistency.md`,
+`andrew-huberman.md`, `deliberate-practice.md`. Source pages are prefixed with the ingest
+date: `2026-05-22-why-we-sleep-ch3.md`.
 
-**Query.** You ask questions against the wiki. The LLM searches for relevant pages, reads them, and synthesizes an answer with citations. Answers can take different forms depending on the question — a markdown page, a comparison table, a slide deck (Marp), a chart (matplotlib), a canvas. The important insight: **good answers can be filed back into the wiki as new pages.** A comparison you asked for, an analysis, a connection you discovered — these are valuable and shouldn't disappear into chat history. This way your explorations compound in the knowledge base just like ingested sources do.
+**Links.** Use Obsidian wikilinks: `[[sleep-consistency]]` or `[[sleep-consistency|sleep]]`
+for aliased text. Every page should link out to related pages and be linked to from at
+least one other page — no orphans.
 
-**Lint.** Periodically, ask the LLM to health-check the wiki. Look for: contradictions between pages, stale claims that newer sources have superseded, orphan pages with no inbound links, important concepts mentioned but lacking their own page, missing cross-references, data gaps that could be filled with a web search. The LLM is good at suggesting new questions to investigate and new sources to look for. This keeps the wiki healthy as it grows.
+**Frontmatter.** Every wiki page starts with YAML frontmatter so Obsidian's Dataview plugin
+can query it:
 
-## Indexing and logging
+```yaml
+---
+type: area | topic | person | source | synthesis
+tags: [health, sleep]
+created: 2026-05-22
+updated: 2026-05-22
+status: stub | developing | mature      # how built-out the page is
+sources: 3                               # count of sources backing this page
+---
+```
 
-Two special files help the LLM (and you) navigate the wiki as it grows. They serve different purposes:
+Source pages add: `source_type: article | pdf | video | transcript | note | image`,
+`source_url:`, and `source_date:` (when the source was published/recorded).
 
-**index.md** is content-oriented. It's a catalog of everything in the wiki — each page listed with a link, a one-line summary, and optionally metadata like date or source count. Organized by category (entities, concepts, sources, etc.). The LLM updates it on every ingest. When answering a query, the LLM reads the index first to find relevant pages, then drills into them. This works surprisingly well at moderate scale (~100 sources, ~hundreds of pages) and avoids the need for embedding-based RAG infrastructure.
+**Page body structure.**
 
-**log.md** is chronological. It's an append-only record of what happened and when — ingests, queries, lint passes. A useful tip: if each entry starts with a consistent prefix (e.g. `## [2026-04-02] ingest | Article Title`), the log becomes parseable with simple unix tools — `grep "^## \[" log.md | tail -5` gives you the last 5 entries. The log gives you a timeline of the wiki's evolution and helps the LLM understand what's been done recently.
+- *Area / topic / person pages*: a one-line definition, then a synthesis written in prose,
+  then a `## Open questions` section, then `## Sources` listing the source pages that back
+  the claims via wikilink.
+- *Source pages*: frontmatter, a one-paragraph summary, `## Key takeaways` (the substantive
+  points), `## Connections` (what in the wiki this updates or contradicts), and a link back
+  to the raw file.
+- *Synthesis pages*: the analysis itself — prose, comparison tables, or chart references —
+  plus a `## Sources` section.
 
-## Optional: CLI tools
+**Tone.** Pages are about Juan and his learning. Write claims with their backing — attribute
+to a source where it matters ("Walker argues…", "a 2024 meta-analysis found…"), and flag
+uncertainty rather than smoothing it over.
 
-At some point you may want to build small tools that help the LLM operate on the wiki more efficiently. A search engine over the wiki pages is the most obvious one — at small scale the index file is enough, but as the wiki grows you want proper search. [qmd](https://github.com/tobi/qmd) is a good option: it's a local search engine for markdown files with hybrid BM25/vector search and LLM re-ranking, all on-device. It has both a CLI (so the LLM can shell out to it) and an MCP server (so the LLM can use it as a native tool). You could also build something simpler yourself — the LLM can help you vibe-code a naive search script as the need arises.
+**Contradictions.** When a new source disagrees with an existing claim, do not silently
+overwrite. Note both: e.g. *"Earlier filed under [[deliberate-practice]] from Source A;
+[[2026-05-22-...]] challenges this, arguing…"*. Surfacing tension is more valuable than
+false tidiness.
 
-## Tips and tricks
+---
 
-- **Obsidian Web Clipper** is a browser extension that converts web articles to markdown. Very useful for quickly getting sources into your raw collection.
-- **Download images locally.** In Obsidian Settings → Files and links, set "Attachment folder path" to a fixed directory (e.g. `raw/assets/`). Then in Settings → Hotkeys, search for "Download" to find "Download attachments for current file" and bind it to a hotkey (e.g. Ctrl+Shift+D). After clipping an article, hit the hotkey and all images get downloaded to local disk. This is optional but useful — it lets the LLM view and reference images directly instead of relying on URLs that may break. Note that LLMs can't natively read markdown with inline images in one pass — the workaround is to have the LLM read the text first, then view some or all of the referenced images separately to gain additional context. It's a bit clunky but works well enough.
-- **Obsidian's graph view** is the best way to see the shape of your wiki — what's connected to what, which pages are hubs, which are orphans.
-- **Marp** is a markdown-based slide deck format. Obsidian has a plugin for it. Useful for generating presentations directly from wiki content.
-- **Dataview** is an Obsidian plugin that runs queries over page frontmatter. If your LLM adds YAML frontmatter to wiki pages (tags, dates, source counts), Dataview can generate dynamic tables and lists.
-- The wiki is just a git repo of markdown files. You get version history, branching, and collaboration for free.
+## Operation: INGEST
 
-## Why this works
+When Juan drops a source into `raw/` and asks you to process it:
 
-The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the bookkeeping. Updating cross-references, keeping summaries current, noting when new data contradicts old claims, maintaining consistency across dozens of pages. Humans abandon wikis because the maintenance burden grows faster than the value. LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass. The wiki stays maintained because the cost of maintenance is near zero.
+1. **Read the source.** For PDFs, extract text. For videos/YouTube, work from the
+   transcript (ask Juan to provide one, or the captions, if not already in `raw/`).
+   For sources with images, read the text first, then view key images in `raw/assets/`.
+2. **Discuss.** Briefly tell Juan the key takeaways and ask what he wants emphasized
+   before you start writing. This is a supervised, one-at-a-time workflow — stay involved.
+3. **Write the source page** in `wiki/sources/` named `YYYY-MM-DD-slug.md` with full
+   frontmatter, summary, key takeaways, and connections.
+4. **Update affected pages.** Touch every area/topic/person page the source bears on —
+   create new pages if the source introduces something with no home yet. Revise syntheses
+   and `overview.md` where the new material shifts the picture. A single source typically
+   touches 8–15 pages. Bump `updated`, `sources`, and `status` in frontmatter as you go.
+5. **Update `index.md`** — add new pages, refresh one-line summaries of changed ones.
+6. **Append to `log.md`** — one `## [DATE] ingest | Title` entry (see log format below).
+7. **Report back** — tell Juan which pages you created and changed so he can review them
+   in Obsidian.
 
-The human's job is to curate sources, direct the analysis, ask good questions, and think about what it all means. The LLM's job is everything else.
+## Operation: QUERY
 
-The idea is related in spirit to Vannevar Bush's Memex (1945) — a personal, curated knowledge store with associative trails between documents. Bush's vision was closer to this than to what the web became: private, actively curated, with the connections between documents as valuable as the documents themselves. The part he couldn't solve was who does the maintenance. The LLM handles that.
+When Juan asks a question:
 
+1. Read `wiki/index.md` to locate relevant pages, then read those pages.
+2. Synthesize an answer with wikilink citations to the pages (and through them, sources)
+   the answer rests on.
+3. If the source material is thin, say so — and suggest what to read or search next.
+4. **Offer to file the answer.** If the answer is a comparison, an analysis, or a
+   connection worth keeping, propose saving it as a page in `wiki/syntheses/` so the
+   exploration compounds instead of vanishing into chat. If Juan agrees, write it, update
+   `index.md`, and log a `query` entry.
 
-## Note
+## Operation: LINT
 
-This document is intentionally abstract. It describes the idea, not a specific implementation. The exact directory structure, the schema conventions, the page formats, the tooling — all of that will depend on your domain, your preferences, and your LLM of choice. Everything mentioned above is optional and modular — pick what's useful, ignore what isn't. For example: your sources might be text-only, so you don't need image handling at all. Your wiki might be small enough that the index file is all you need, no search engine required. You might not care about slide decks and just want markdown pages. You might want a completely different set of output formats. The right way to use this is to share it with your LLM agent and work together to instantiate a version that fits your needs. The document's only job is to communicate the pattern. Your LLM can figure out the rest.
+When Juan asks for a health check, audit the wiki and report (don't auto-fix without
+confirmation):
+
+- Contradictions between pages.
+- Stale claims a newer source has superseded.
+- Orphan pages (no inbound wikilinks).
+- Concepts mentioned repeatedly but lacking their own page.
+- Missing cross-references between clearly related pages.
+- Data gaps a web search or new source could fill — suggest specific questions to
+  investigate and sources to look for.
+- Frontmatter drift (wrong `sources` count, stale `updated`, `status` that no longer fits).
+
+Append a `## [DATE] lint` entry to `log.md` summarizing findings.
+
+---
+
+## index.md
+
+Content-oriented catalog of the whole wiki. Organized by category (Areas, Topics, People,
+Syntheses, Sources). Each entry: a wikilink, a one-line summary, optionally source count or
+date. Update it on every ingest and whenever a page is created or meaningfully changed.
+This is the first thing you read when answering a query.
+
+## log.md
+
+Chronological, append-only. Every entry starts with a consistent header so the log is
+greppable — `grep "^## \[" log.md | tail -5` gives the recent timeline:
+
+```
+## [2026-05-22] ingest | Why We Sleep — Ch. 3
+## [2026-05-22] query  | How does my sleep affect focus?
+## [2026-05-22] lint   | 2 contradictions, 1 orphan
+```
+
+Under each header, a few lines on what happened and which pages were affected.
+
+---
+
+## Source-type handling
+
+- **Web articles** — typically clipped to markdown via Obsidian Web Clipper. Images, if
+  downloaded, land in `raw/assets/`.
+- **PDFs / papers** — extract text before summarizing; cite section or page numbers in
+  takeaways where useful.
+- **Images / diagrams** — you cannot read markdown with inline images in one pass. Read the
+  text, then view the referenced images in `raw/assets/` separately for context.
+- **Transcripts / notes** — treat as ordinary text sources.
+- **YouTube videos** — work from the transcript or captions. If only a URL is in `raw/`,
+  ask Juan to supply the transcript, and record `source_url` in the source page.
+
+---
+
+## Conventions co-evolve
+
+This schema is not fixed. As Juan and the LLM discover what works for this domain — new
+page types, better frontmatter, refined workflows — update this file. It is the one piece
+of the wiki Juan and the LLM maintain together.
