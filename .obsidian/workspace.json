@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7e8f12ce8cdbf31c",
+        "id": "114b6cc9af339e6b",
         "type": "tabs",
         "children": [
           {
-            "id": "cc827a2443bc4df8",
+            "id": "7240ef75b21c15ec",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/topics/verifiability.md",
+                "file": "wiki/syntheses/willison-vs-karpathy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "verifiability"
+              "title": "willison-vs-karpathy"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/topics/verifiability.md",
+                "file": "wiki/syntheses/willison-vs-karpathy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for verifiability"
+              "title": "Backlinks for willison-vs-karpathy"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wiki/topics/verifiability.md",
+                "file": "wiki/syntheses/willison-vs-karpathy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from verifiability"
+              "title": "Outgoing links from willison-vs-karpathy"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wiki/topics/verifiability.md",
+                "file": "wiki/syntheses/willison-vs-karpathy.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of verifiability"
+              "title": "Outline of willison-vs-karpathy"
             }
           },
           {
@@ -182,17 +182,17 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "cc827a2443bc4df8",
+  "active": "7240ef75b21c15ec",
   "lastOpenFiles": [
+    "wiki/people/andrej-karpathy.md",
+    "raw/Sequoia Ascent 2026 summary.md",
+    "wiki/topics/verifiability.md",
     "wiki/syntheses/willison-vs-karpathy.md",
     "wiki/topics/software-3-0.md",
     "wiki/topics/agent-native-infrastructure.md",
-    "wiki/topics/verifiability.md",
-    "wiki/people/andrej-karpathy.md",
     "wiki/sources/2026-04-30-sequoia-ascent-karpathy.md",
     "wiki/overview.md",
     "wiki/index.md",
-    "raw/Sequoia Ascent 2026 summary.md",
     "wiki/people/simon-willison.md",
     "wiki/sources/2026-05-23-what-is-agentic-engineering.md",
     "wiki/sources/2026-05-23-subagents.md",

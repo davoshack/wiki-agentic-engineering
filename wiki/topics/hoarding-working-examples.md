@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, prompting-patterns, hoarding, recombination, exploratory-prototyping]
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-25
 status: developing
-sources: 4
+sources: 5
 ---
 
 # Hoarding working examples
@@ -49,6 +49,16 @@ The hoarding habit is amplified by, and amplifies, the cost shift described in [
 
 **Parallel subagents** (see [[subagents]]) make the "build many small experiments in parallel and keep the ones that work" loop fast enough that the hoard can grow noticeably faster than human serial attention allows. Combined with cheap models for the dispatched workers (Claude Haiku is Willison's named example), the cost of generating hoardable artifacts drops further.
 
+### Karpathy's hoardable artifacts
+
+[[andrej-karpathy]]'s body of work in [[2026-04-30-sequoia-ascent-karpathy]] illustrates a complementary form of hoarding — small, deliberately distilled artifacts designed for both humans and agents to inspect:
+
+- **`microGPT`** — a complete GPT training and inference implementation in a single dependency-free Python file. Karpathy frames it as an educational artifact small enough that an agent can read it whole and a human can hold it in their head. It is the canonical hoardable artifact for "how does an LLM training loop actually work?".
+- **The LLM Wiki Pattern** — Karpathy's [original gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) is *itself* a hoardable artifact: a paste-able description of a workflow that produces a knowledge base. This wiki is a direct application of that pattern.
+- **The OpenClaw installation skill** — a block of text you paste into an agent to install a complex tool across many environments. The "shape" of a hoardable artifact in the [[software-3-0|Software 3.0]] paradigm: not code, but *agent instructions*.
+
+Two things to note. First, Willison and Karpathy converge on the same practice from different angles: Willison's worked example (the OCR-PDF tool combining Tesseract.js + PDF.js) is *recombination*, while Karpathy's worked examples lean toward *distillation* (the smallest legible artifact for a domain). Both feed agents that can navigate and recombine them. Second, Karpathy's `microGPT` story includes a meta-observation: *"The models hate this. They can't do it. I kept trying to prompt an LLM to simplify more and more, and it just couldn't."* Tasteful simplification is currently off the model's rails (see [[verifiability]]), so the human hoarder's role in *creating* the artifact remains load-bearing.
+
 ## Open questions
 
 - How should a hoard be *organized* so an agent can navigate it efficiently? Public/searchable (Willison's approach) vs. local-only have different tradeoffs.
@@ -62,3 +72,4 @@ The hoarding habit is amplified by, and amplifies, the cost shift described in [
 - [[2026-05-23-writing-code-is-cheap-now]]
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-23-subagents]]
+- [[2026-04-30-sequoia-ascent-karpathy]]

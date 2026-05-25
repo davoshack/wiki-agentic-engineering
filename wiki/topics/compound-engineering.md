@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, workflow, retrospectives, agent-instructions, system-prompts]
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-25
 status: developing
-sources: 2
+sources: 3
 ---
 
 # Compound engineering
@@ -30,6 +30,23 @@ This topic also connects to [[hoarding-working-examples]] from a different angle
 
 The mechanics view from [[agent-architecture]] makes this concrete: the **system prompt** is the surface compound engineering writes to. System prompts in real coding agents are routinely hundreds of lines (Willison links the [Codex system prompt](https://github.com/openai/codex/blob/rust-v0.114.0/codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md) as a public example). When a "compound step" produces a lesson worth keeping, it lands either there, in repo-level instruction files (`CLAUDE.md`, `AGENTS.md`) that the harness loads into context, or in the **tool harness** itself — new tools, refined tool descriptions, or changed defaults. The same channel governs how [[subagents|specialist subagents]] are configured (their custom system prompts and tools are exactly this kind of compounded knowledge applied at a per-role granularity).
 
+### The recipe Karpathy compounds toward
+
+[[andrej-karpathy]]'s compact recipe in [[2026-04-30-sequoia-ascent-karpathy]] makes the *target* of compound engineering more explicit:
+
+```
+define the context
+define the tools
+define the feedback loop
+define the guardrails
+let agents work
+preserve human understanding
+```
+
+A mature compounded harness is exactly an answer to the first four lines: what context the agent loads, what tools it can use, how it gets feedback ([[verifiability|verifiability and evals]]), and what guardrails prevent unsafe actions. Each compound step refines one or more of these. *"Preserve human understanding"* is the deliberately non-automatable last line — the reason retrospectives are still done by a human, not an agent.
+
+The aspirational endpoint Karpathy gestures at: *"I should be able to say 'build MenuGen' and have the agent deploy the whole thing without manual clicking."* Reaching that point is a function of two compounding loops: the agent's own harness getting better via compound engineering, *and* the surrounding world becoming [[agent-native-infrastructure|agent-native]] so the actuators the harness needs actually exist.
+
 ## Open questions
 
 - What does a good "compound step" actually look like in practice? Is it a checklist, free-form notes, structured prompt updates? The Every post would be worth ingesting directly.
@@ -41,3 +58,4 @@ The mechanics view from [[agent-architecture]] makes this concrete: the **system
 
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-23-how-coding-agents-work]]
+- [[2026-04-30-sequoia-ascent-karpathy]]

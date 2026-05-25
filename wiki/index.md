@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-05-23
+updated: 2026-05-25
 ---
 
 # Index
@@ -18,26 +18,42 @@ question, read this first to find relevant pages, then drill into them.
 
 ## Topics
 
-- [[coding-agents]] — what an agent is (tools in a loop), why code execution is the defining capability, sync vs. async flavors, and how this differs from vibe coding.
-- [[agent-architecture]] — how a coding agent is actually built: LLM + system prompt + tools in a loop. Tokens, context windows, token caching, the tool-call protocol, reasoning mode.
-- [[economics-of-code]] — the cost of producing code has collapsed; the cost of producing *good* code (9-dimension checklist) has not; old engineering intuitions are due for an overhaul; spend the surplus on quality. Now also covers the token-cost layer.
-- [[hoarding-working-examples]] — keep a personal collection of runnable code that proves what you know how to do, and recombine those examples in agent prompts.
+### Foundations
+
+- [[coding-agents]] — what an agent is (tools in a loop), why code execution is the defining capability, sync vs. async flavors, vibe-coding vs. agentic-engineering (Karpathy's canonical floor/ceiling framing).
+- [[agent-architecture]] — how a coding agent is actually built: LLM + system prompt + tools in a loop. Tokens, context windows, token caching, the tool-call protocol, reasoning mode, ghosts-not-animals mental model.
+- [[software-3-0]] — Karpathy's paradigm progression (1.0 explicit code → 2.0 learned weights → 3.0 LLM-as-interpreter, context-window-as-program). Some apps should disappear into direct model transformations.
+
+### Economics and analytic frames
+
+- [[economics-of-code]] — the cost of producing code has collapsed; the cost of producing *good* code (9-dimension checklist) has not; old engineering intuitions are due for an overhaul; spend the surplus on quality. Token-cost layer and the verifiability-of-coding explanation included.
+- [[verifiability]] — Karpathy's analytic frame: LLMs automate what you can verify. Jagged intelligence as a corollary; capability spikes where labs train heavily on verifiable RL.
+
+### Practices
+
+- [[hoarding-working-examples]] — keep a personal collection of runnable code that proves what you know how to do, and recombine those examples in agent prompts. Karpathy's `microGPT` and the LLM Wiki Pattern as canonical distilled artifacts.
 - [[refactoring-with-agents]] — use async coding agents to eliminate the "simple but time-consuming" class of technical debt; worktree workflow, PR evaluation, zero-tolerance for code smells.
-- [[git-with-agents]] — Git is a key tool for agent workflows; agents are fluent in basic and advanced Git, which lets the human be more ambitious. Includes prompt vocabulary, the "sort out this git mess" pattern, bisect, and history rewriting as editorial work.
+- [[git-with-agents]] — Git is a key tool for agent workflows; agents are fluent in basic and advanced Git, which lets the human be more ambitious. Prompt vocabulary, the "sort out this git mess" pattern, bisect, and history rewriting as editorial work.
 - [[subagents]] — dispatching a fresh copy of the agent with a new context window. Three flavors: exploratory (Claude Code's `Explore`), parallel (often on cheaper models like Haiku), specialist (code reviewer, test runner, debugger).
-- [[compound-engineering]] — end each project with a retrospective whose output is updated agent instructions (system prompt, harness, repo-level instruction files); quality compounds across runs. (Term from Shipper & Klaassen at Every.)
+- [[compound-engineering]] — end each project with a retrospective whose output is updated agent instructions (system prompt, harness, repo-level instruction files); quality compounds across runs. Karpathy's compact recipe (define context / tools / feedback loop / guardrails; let agents work; preserve understanding) is the target shape.
 - [[agent-code-review]] — the human owns the first review pass on agent-generated code; characteristics of a good agentic PR; evidence-of-work-done signals.
+
+### World-side
+
+- [[agent-native-infrastructure]] — when the user is an agent acting for a human, products need sensors and actuators: markdown docs, CLIs, APIs, MCP servers, structured logs, copy-pasteable instructions, safe permissioning, headless setup flows. MenuGen deployment as the running benchmark.
 
 ## People
 
 - [[simon-willison]] — author of *Agentic Engineering Patterns*; practitioner-oriented, definitionally disciplined, frames many patterns as extensions of pre-LLM craft.
+- [[andrej-karpathy]] — co-founder of OpenAI; Tesla Autopilot; Eureka Labs. Paradigm-namer (Software 1.0/2.0/3.0; vibe coding; agentic engineering; verifiability; jagged intelligence; ghosts not animals). Originator of the LLM Wiki Pattern that inspired this wiki.
 
 ## Syntheses
 
-*Cross-cutting analyses, comparisons, and query answers worth keeping. None yet.*
+- [[willison-vs-karpathy]] — the wiki's first cross-author synthesis. Willison gives practices and operational discipline; Karpathy gives paradigms and analytic frames. Where they overlap, where they diverge, what's still missing from both.
 
 ## Sources
 
+- [[2026-04-30-sequoia-ascent-karpathy]] — Andrej Karpathy in conversation with Stephanie Zhan, Sequoia Ascent 2026. Software 3.0, verifiability, jagged intelligence, vibe coding vs. agentic engineering, ghosts not animals, agent-native infrastructure, MenuGen examples.
 - [[2026-05-23-what-is-agentic-engineering]] — Simon Willison, *Agentic Engineering Patterns* Ch. 1. Defines agentic engineering, agent, and coding agent; positions against vibe coding.
 - [[2026-05-23-writing-code-is-cheap-now]] — Simon Willison, *Agentic Engineering Patterns* Ch. 2. The cost of code has dropped; the cost of *good* code hasn't; lists 9 dimensions of good code.
 - [[2026-05-23-hoard-things-you-know-how-to-do]] — Simon Willison, *Agentic Engineering Patterns* Ch. 3. Hoard working examples; recombine them in agent prompts (worked OCR-PDF example).

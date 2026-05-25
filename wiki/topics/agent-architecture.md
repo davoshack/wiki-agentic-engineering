@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, agent-architecture, llm-fundamentals, tokens, system-prompts, harness, reasoning]
+tags: [agentic-engineering, agent-architecture, llm-fundamentals, tokens, system-prompts, harness, reasoning, ghosts-vs-animals, mental-model]
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-25
 status: developing
-sources: 1
+sources: 2
 ---
 
 # Agent architecture
@@ -85,6 +85,16 @@ One of the major 2025 advances: models spend extra tokens generating text that *
 
 The full loop is: take the user prompt, prepend the system prompt and the conversation history, send to the LLM, parse out any tool calls, execute them, append the results, repeat — until the model emits a final response without a tool call. **LLM + system prompt + tools in a loop.**
 
+### Mental model: ghosts, not animals
+
+[[andrej-karpathy]]'s framing from [[2026-04-30-sequoia-ascent-karpathy]] is worth holding alongside the mechanics. LLMs are **not animals**. They have no biological drives, no embodied survival pressure, no curiosity, play, or intrinsic motivation in the animal sense. They are **statistical simulations of human artifacts**, shaped by pretraining, post-training, RL, product feedback, and economic incentives.
+
+Why this matters in practice: anthropomorphic expectations mislead. *"These systems can be brilliant in one moment and bizarrely dumb in the next. They are not smooth human minds. They are jagged, alien tools."* See [[verifiability|jagged intelligence]] for the analytic frame that explains the unevenness — capability spikes where labs concentrated verifiable RL and data; behavior degrades elsewhere.
+
+The posture the framing recommends: **neither dismissal nor blind trust — empirical familiarity.** Learn where the model works, where it fails, what it was trained for, and how to build guardrails around it. Yelling at the model doesn't help; testing it against your actual workload and updating the harness based on what you learn ([[compound-engineering]]) does.
+
+The mechanics on this page describe *what* the agent is. Ghosts-not-animals is a reminder of *what kind of thing* you're interacting with — neither a human collaborator nor a deterministic computer, but a third category that needs its own intuitions.
+
 ## Open questions
 
 - How aggressively does cache invalidation happen in practice across providers? The "don't modify earlier conversation" rule is a strong design constraint — worth understanding the actual cache-hit economics.
@@ -96,3 +106,4 @@ The full loop is: take the user prompt, prepend the system prompt and the conver
 ## Sources
 
 - [[2026-05-23-how-coding-agents-work]]
+- [[2026-04-30-sequoia-ascent-karpathy]]

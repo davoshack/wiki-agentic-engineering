@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, economics, habits, good-code, technical-debt, exploratory-prototyping, tokens]
+tags: [agentic-engineering, economics, habits, good-code, technical-debt, exploratory-prototyping, tokens, verifiability]
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-25
 status: developing
-sources: 5
+sources: 6
 ---
 
 # Economics of code
@@ -64,6 +64,14 @@ The cost story above is about *engineering time*. There is a second cost layer �
 
 These optimizations matter because the [[economics-of-code|cheap-code surplus]] depends on the *per-task* cost staying low. Without caching and subagents, the cost of code would creep back up at scale.
 
+### Why coding specifically — the verifiability layer
+
+[[andrej-karpathy]] in [[2026-04-30-sequoia-ascent-karpathy]] adds an analytic frame that explains *why* coding agents work so dramatically better than ordinary LLM applications: **coding is verifiable.** Tests pass or fail; programs run or crash; diffs can be inspected; benchmarks can be measured. Verifiable tasks are practiceable in reinforcement learning, which is why frontier labs train coding heavily and capability progresses rapidly.
+
+The implication for the cost story: the cheap-code surplus is partly a *consequence* of coding being on the model's rails. Tasks without an automatic success signal (Karpathy's "tasteful simplification" example — see his `microGPT` story) stay expensive in a different way: even with agents, the work doesn't compound through RL training. See [[verifiability]] for the full frame, including the **jagged intelligence** corollary that explains why models simultaneously refactor 100K-line codebases and tell you to walk to a 50m-away car wash.
+
+The practical reading: when scoping a project, ask not only "is this work cheap with an agent?" but also "is this work verifiable enough that the model is *good* at it?" The two questions trade off when you push toward less-verifiable domains (UI taste, code aesthetics, novel system design).
+
 ## Open questions
 
 - Which old intuitions are *actually* wrong now, and which are still load-bearing? Default-yes on every refactor is presumably not the answer either.
@@ -78,3 +86,4 @@ These optimizations matter because the [[economics-of-code|cheap-code surplus]] 
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-23-how-coding-agents-work]]
 - [[2026-05-23-subagents]]
+- [[2026-04-30-sequoia-ascent-karpathy]]

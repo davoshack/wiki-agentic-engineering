@@ -18,6 +18,8 @@ Willison's writing is the wiki's initial entry point into agentic engineering. H
 - **Practitioner, not theorist.** Claims tend to be grounded in working code he has actually shipped — his blog, [TIL blog](https://til.simonwillison.net/), 1000+ public [GitHub repos](https://github.com/simonw), and the [tools.simonwillison.net](https://tools.simonwillison.net/) collection are all primary evidence for the patterns he describes.
 - **Definitional discipline.** He invests in tight, defensible definitions of contested terms and resists letting them drift. The chapters ingested so far define [[coding-agents|agent and coding agent]] precisely, defend the original narrow meaning of *vibe coding* against expansion, and decompose "good code" into a 9-point checklist rather than leaving it as a vibe.
 - **Continuity with pre-LLM craft.** Several of his patterns are explicitly framed as extensions of advice that worked before LLMs (e.g., [[hoarding-working-examples|hoarding working examples]]). The LLM era amplifies the value of habits that were already worth having.
+
+- **Reads alongside, not against, Karpathy.** [[andrej-karpathy]] (the wiki's other primary voice) is the originator of the vibe-coding term Willison's Ch.1 cites secondhand; both authors land in the same place on the narrow definition. Where Karpathy is the *paradigm-namer*, Willison is the *practitioner* — see [[willison-vs-karpathy]] for the explicit comparison.
 - **The guide is a living document.** *Agentic Engineering Patterns* is explicitly a work in progress; he expects to revise existing chapters as the field evolves.
 
 ## Open questions

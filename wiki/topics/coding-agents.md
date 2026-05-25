@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, definitions, coding-agents, vibe-coding, async-agents]
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-25
 status: developing
-sources: 6
+sources: 7
 ---
 
 # Coding agents
@@ -34,15 +34,35 @@ A related point: LLMs by themselves don't learn from past mistakes, but coding a
 
 Within coding agents, [[simon-willison]] singles out **asynchronous coding agents** as a category worth using deliberately. Named examples: [Gemini Jules](https://jules.google.com/), [OpenAI Codex web](https://developers.openai.com/codex/cloud/), [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web). The async flavor lets the human fire off work — typically a refactor or an exploratory prototype — without surrendering their laptop's foreground attention to it; results come back as a pull request to evaluate. The synchronous local flavor (Claude Code CLI, etc.) is what you use when you want to be in the loop. The patterns that make heaviest use of the async mode are in [[refactoring-with-agents]] and the exploratory-prototyping section of [[economics-of-code]].
 
-### Coding agents ≠ vibe coding
+### Vibe coding vs. agentic engineering — canonical framing
 
-[Andrej Karpathy coined "vibe coding"](https://twitter.com/karpathy/status/1886192184808149383) in February 2025 — three weeks before the first Claude Code release — to describe prompting LLMs to write code while you "forget that the code even exists." Some commentators have stretched the term to cover *any* LLM-assisted coding. Willison pushes back: the original narrow meaning is more useful, because we need vocabulary that distinguishes **unreviewed, prototype-quality LLM output** from code that the author has brought up to a production-ready standard.
+[[andrej-karpathy]] coined ["vibe coding"](https://twitter.com/karpathy/status/1886192184808149383) in February 2025 — three weeks before the first Claude Code release — to describe prompting LLMs to write code while you "forget that the code even exists." In [[2026-04-30-sequoia-ascent-karpathy]] he provides the **canonical floor/ceiling framing**:
 
-For this wiki: "vibe coding" is the lower-stakes mode (prototypes, throwaways, exploration); agentic engineering covers the whole range up through production work, where the human is responsible for verification, testing, and the rest of [[economics-of-code|what makes code "good"]].
+- **Vibe coding raises the floor.** It lets almost anyone create software by describing what they want. Fine for prototypes and personal tools.
+- **Agentic engineering raises the ceiling.** It is the *professional discipline of coordinating fallible agents while preserving correctness, security, taste, and maintainability.* What serious teams need.
+
+Karpathy's compact characterization of what the agentic engineer actually does: *"design specs, supervise plans, inspect diffs, write tests, create evaluation loops, manage permissions, isolate worktrees, and preserve quality."* That list maps directly onto Willison's good-PR checklist in [[agent-code-review]] and the [[economics-of-code|9-point good-code definition]].
+
+[[simon-willison]] makes the same distinction from a vocabulary-discipline angle in [[2026-05-23-what-is-agentic-engineering]]: he resists letting "vibe coding" expand to cover *all* LLM-assisted coding because we need words for the difference between unreviewed prototype output and production work. Karpathy here confirms the narrow meaning and contributes the symmetric framing.
+
+A useful worked example from Karpathy: the **MenuGen payment bug**. The agent tried to match Stripe purchases to Google accounts using email addresses — *plausible code, bad system design*. The Stripe and Google emails can differ; you need a persistent user ID. The frontier skill isn't memorizing API details (`dim` vs `axis`, `reshape`, `permute`) — agents have good recall for that. It's understanding the underlying concepts: storage, views, invariants, identity, security boundaries, the shape of the system. See [[willison-vs-karpathy]] for the cross-author treatment.
 
 ### What the human still does
 
 Because typing code is no longer the constraint, the human's role in the loop is more clearly: choose *what* to build, equip the agent with the right tools, specify the problem at the right level of detail, and verify and iterate on results until the output is robust and credible.
+
+Karpathy's compact recipe for the new shape of work, from [[2026-04-30-sequoia-ascent-karpathy]]:
+
+```
+define the context
+define the tools
+define the feedback loop
+define the guardrails
+let agents work
+preserve human understanding
+```
+
+The first four are mechanical (and lean on [[agent-architecture]], [[verifiability]], and the tool surface); *"preserve human understanding"* is the line he keeps returning to — agents change the workflow but the human is still the bottleneck on knowing what's worth building and what result is suspicious. The broader paradigm-level framing for *why* the work is shaped this way is [[software-3-0]] — humans now program LLMs through context, tools, examples, and instructions, with the LLM as the interpreter.
 
 ## Open questions
 
@@ -59,3 +79,4 @@ Because typing code is no longer the constraint, the human's role in the loop is
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-23-anti-patterns-things-to-avoid]]
 - [[2026-05-23-how-coding-agents-work]]
+- [[2026-04-30-sequoia-ascent-karpathy]]

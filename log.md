@@ -99,3 +99,36 @@ Audited 17 content pages across `wiki/`. Findings:
 - **Open questions with no current-source answer**: vendor portability of patterns; reasoning-mode economics; safe envelope for shared-branch history rewriting; detecting file dependencies before parallel-dispatching subagents; further anti-patterns; operational mechanics of compound engineering; reliability of author/date preservation in library extraction.
 
 No fixes applied — awaiting confirmation.
+
+## [2026-05-25] ingest | Andrej Karpathy at Sequoia Ascent 2026
+
+Major ingest — first source by a second author and the originator of "vibe coding"
+Willison's chapters had cited secondhand. Source is a 37KB combined summary + cleaned
+transcript posted to Karpathy's blog (talk delivered 2026-04-30, transcript posted
+shortly after). Three judgment calls confirmed with Juan: spin out 3 new topic pages
+(rather than 4 — vibe coding stays folded in [[coding-agents]] with a major update);
+fold ghosts-vs-animals into [[agent-architecture]] as a mental-model section; build
+the wiki's first explicit cross-author synthesis page.
+
+Pages created:
+- Source: [[2026-04-30-sequoia-ascent-karpathy]]
+- Person: [[andrej-karpathy]]
+- Topics: [[software-3-0]], [[verifiability]] (incl. jagged intelligence), [[agent-native-infrastructure]]
+- Synthesis (first one in the wiki): [[willison-vs-karpathy]]
+
+Pages updated:
+- [[coding-agents]] — major rewrite of the vibe-coding section using Karpathy's canonical floor/ceiling framing; added Karpathy's compact "define context / tools / feedback loop / guardrails" recipe; source count to 7.
+- [[agent-architecture]] — added "ghosts not animals" mental-model section; source count to 2.
+- [[economics-of-code]] — added "why coding specifically — the verifiability layer" section; source count to 6.
+- [[compound-engineering]] — added "the recipe Karpathy compounds toward" section; source count to 3.
+- [[hoarding-working-examples]] — added "Karpathy's hoardable artifacts" section (microGPT, LLM Wiki Pattern, OpenClaw skill) with the distillation-vs-recombination observation; source count to 5.
+- [[simon-willison]] — added "reads alongside Karpathy" note pointing to the synthesis; source count unchanged.
+- [[agentic-engineering]] (area) — opening synthesis now references Karpathy and the December 2025 inflection; habits list expanded with [[verifiability]] and [[agent-native-infrastructure]]; source count to 9.
+- `wiki/index.md` — restructured topics into four groupings (Foundations, Economics-and-analytic-frames, Practices, World-side); added all new entries.
+- `wiki/overview.md` — restructured around a five-layer argument (what it is → how it works → why it matters and where AI moves fastest → what to spend the surplus on → world side); cross-cutting habits expanded; open questions refreshed; source count to 9.
+
+Multi-author note: the wiki is no longer "one author deep." Future ingests can use the
+stabilized vocabulary (coding agents, harness, tools in a loop, vibe coding, agentic
+engineering, Software 3.0, verifiability, jagged intelligence, ghosts not animals,
+sensors and actuators) without re-defining. The paradigm/practice split (Karpathy /
+Willison) is now a useful spine for placing future sources.
