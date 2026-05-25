@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/syntheses/willison-vs-karpathy.md",
+                "file": "wiki/topics/agent-code-review.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "willison-vs-karpathy"
+              "title": "agent-code-review"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/syntheses/willison-vs-karpathy.md",
+                "file": "wiki/topics/agent-code-review.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for willison-vs-karpathy"
+              "title": "Backlinks for agent-code-review"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wiki/syntheses/willison-vs-karpathy.md",
+                "file": "wiki/topics/agent-code-review.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from willison-vs-karpathy"
+              "title": "Outgoing links from agent-code-review"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wiki/syntheses/willison-vs-karpathy.md",
+                "file": "wiki/topics/agent-code-review.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of willison-vs-karpathy"
+              "title": "Outline of agent-code-review"
             }
           },
           {
@@ -182,16 +182,19 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "7240ef75b21c15ec",
+  "active": "4a493b7b737f67e1",
   "lastOpenFiles": [
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
+    "wiki/topics/refactoring-with-agents.md",
+    "wiki/sources/2026-04-30-sequoia-ascent-karpathy.md",
+    "wiki/topics/agent-native-infrastructure.md",
+    "wiki/overview.md",
+    "wiki/templates/person.md",
+    "wiki/topics/software-3-0.md",
+    "wiki/syntheses/willison-vs-karpathy.md",
     "wiki/people/andrej-karpathy.md",
     "raw/Sequoia Ascent 2026 summary.md",
     "wiki/topics/verifiability.md",
-    "wiki/syntheses/willison-vs-karpathy.md",
-    "wiki/topics/software-3-0.md",
-    "wiki/topics/agent-native-infrastructure.md",
-    "wiki/sources/2026-04-30-sequoia-ascent-karpathy.md",
-    "wiki/overview.md",
     "wiki/index.md",
     "wiki/people/simon-willison.md",
     "wiki/sources/2026-05-23-what-is-agentic-engineering.md",
@@ -208,10 +211,7 @@
     "wiki/topics/agent-architecture.md",
     "wiki/sources/2026-05-23-using-git-with-coding-agents.md",
     "wiki/sources/2026-05-23-how-coding-agents-work.md",
-    "raw/Using Git with coding agents - Agentic Engineering Patterns.md",
-    "raw/How coding agents work - Agentic Engineering Patterns.md",
     "Pasted image 20260523191453.png",
-    "raw/What is agentic engineering? - Agentic Engineering Patterns.md",
     "Excalidraw",
     "Untitled.canvas",
     "Clippings"

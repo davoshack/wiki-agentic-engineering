@@ -132,3 +132,18 @@ stabilized vocabulary (coding agents, harness, tools in a loop, vibe coding, age
 engineering, Software 3.0, verifiability, jagged intelligence, ghosts not animals,
 sensors and actuators) without re-defining. The paradigm/practice split (Karpathy /
 Willison) is now a useful spine for placing future sources.
+
+## [2026-05-25] query  | Ghosts-not-animals × Sutton's Bitter Lesson
+
+Juan asked how Karpathy's ghosts-not-animals mental model relates to Sutton's
+*The Bitter Lesson*. Answered as a synthesis: same anti-anthropomorphism applied at
+sequential stages — Sutton at design-time (don't encode cognition intuitions into
+training), Karpathy at use-time (don't project them onto the resulting system). The
+ghost is the natural artifact of taking Sutton seriously; jagged intelligence is the
+practitioner's view of "scales with computation." Filed the answer as
+[[ghosts-and-the-bitter-lesson]] with an explicit note that Sutton is not yet ingested
+(the Bitter Lesson content currently rests on outside material).
+
+Suggested follow-up ingest: Sutton's [2019 essay](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
+would resolve the dangling external reference and anchor a `topics/bitter-lesson.md` page,
+with inbound wikilinks from [[verifiability]], [[agent-architecture]], and this synthesis.

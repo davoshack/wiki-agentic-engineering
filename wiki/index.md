@@ -50,6 +50,7 @@ question, read this first to find relevant pages, then drill into them.
 ## Syntheses
 
 - [[willison-vs-karpathy]] — the wiki's first cross-author synthesis. Willison gives practices and operational discipline; Karpathy gives paradigms and analytic frames. Where they overlap, where they diverge, what's still missing from both.
+- [[ghosts-and-the-bitter-lesson]] — anti-anthropomorphism at two stages: Sutton (don't encode your cognition intuitions into the *training*) and Karpathy (don't project your cognition intuitions onto the *resulting system*). The ghost is the artifact of taking Sutton seriously; jagged intelligence is the corollary of "scales with computation." Sutton not yet ingested.
 
 ## Sources
 
