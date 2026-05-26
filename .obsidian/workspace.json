@@ -11,10 +11,26 @@
             "id": "ef095261f4303e65",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
+                "bFile": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: ghosts-and-the-bitter-lesson.excalidraw  (Working Tree)"
+            }
+          },
+          {
+            "id": "68bf11bbc5548022",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2026-05-25 22.52.50.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-05-25 22.52.50.excalidraw"
             }
           }
         ]
@@ -177,10 +193,12 @@
   },
   "active": "ef095261f4303e65",
   "lastOpenFiles": [
-    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
     "wiki/syntheses/ghosts-and-the-bitter-lesson.png",
     "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
-    "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
+    "Excalidraw/Drawing 2026-05-25 22.52.50.excalidraw.md",
+    "Excalidraw",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
     "wiki/syntheses/willison-vs-karpathy.md",
     "wiki/topics/coding-agents.md",
     "wiki/sources/2026-05-23-subagents.md",
@@ -204,9 +222,7 @@
     "CLAUDE.md",
     "wiki/sources/2026-05-23-writing-code-is-cheap-now.md",
     "raw/Subagents - Agentic Engineering Patterns.md",
-    "wiki/topics/subagents.md",
     "Pasted image 20260523191453.png",
-    "Excalidraw",
     "Untitled.canvas",
     "Clippings"
   ]
