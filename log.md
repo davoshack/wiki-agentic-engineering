@@ -170,3 +170,22 @@ read references, ran the design steps (the curve *is* the Ghost rather than a bo
 the vision check and the defect check passed. The new file is `.excalidraw` (raw JSON,
 per skill convention), the PNG is the embedded artifact in the synthesis markdown, and
 the old `.excalidraw.md` was deleted.
+
+## [2026-05-25] diagram | Venn diagram for [[willison-vs-karpathy]]
+
+Built `wiki/syntheses/willison-vs-karpathy.excalidraw` following the skill end-to-end.
+Visual pattern chosen: **Venn diagram** — genuinely isomorphic to the synthesis's central
+argument (two perspectives that overlap substantially, each contributing things the
+other doesn't, with shared blind spots outside both). Strip the text and the structure
+alone communicates the claim.
+
+Color encoding: orange = Willison (practitioner discipline), purple = Karpathy (AI /
+paradigms), red = blind spots. Two ellipse outlines (no fill, transparent background)
+so the overlap region is naturally defined by the intersecting arcs. Region labels +
+short bullets in each of the three zones; blind spots with marker dots below a dashed
+divider; synthesis pull-quote at the bottom.
+
+Passed the render-view-fix loop on iteration 1 — Venn geometry was planned with ellipse
+math first (verified bullet x-coordinates fall inside their intended zones at the
+relevant y-coordinates), so no defects to fix on the first render. PNG embedded in
+[[willison-vs-karpathy]].

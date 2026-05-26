@@ -11,6 +11,9 @@ sources: 9
 
 The wiki's first cross-author synthesis. With both voices now represented — eight chapters from [[simon-willison]]'s *Agentic Engineering Patterns* guide and Karpathy's [[2026-04-30-sequoia-ascent-karpathy|Sequoia Ascent 2026 talk]] — it's worth stepping back to compare. The short version: they agree on substance and divide labor on framing. Willison gives the wiki its *practices and operational discipline*; Karpathy gives it the *paradigms and analytic frames*. Where they overlap, they reinforce. Where they don't overlap, each fills a gap the other leaves.
 
+![[willison-vs-karpathy.png]]
+*Diagram source: [[willison-vs-karpathy.excalidraw]] — built with the project's `excalidraw-diagram` skill. The Venn structure encodes the argument: two overlapping perspectives, three zones (each-alone + shared substance), shared blind spots outside both circles.*
+
 ## What each is contributing
 
 ### Willison — practices and operational discipline

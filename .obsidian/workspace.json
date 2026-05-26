@@ -4,33 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "47ada8b9e86f2c62",
+        "id": "6d285d96bfbe4849",
         "type": "tabs",
         "children": [
           {
-            "id": "ef095261f4303e65",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
-                "bFile": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: ghosts-and-the-bitter-lesson.excalidraw  (Working Tree)"
-            }
-          },
-          {
-            "id": "68bf11bbc5548022",
+            "id": "2e416238924eeaca",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Drawing 2026-05-25 22.52.50.excalidraw.md"
+                "file": "wiki/syntheses/willison-vs-karpathy.excalidraw"
               },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-05-25 22.52.50.excalidraw"
+              "title": "willison-vs-karpathy"
             }
           }
         ]
@@ -90,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 358.5
+    "width": 333.5
   },
   "right": {
     "id": "428d1d1876e1680a",
@@ -106,6 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "wiki/syntheses/willison-vs-karpathy.excalidraw",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for willison-vs-karpathy"
             }
           },
           {
@@ -124,11 +111,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "wiki/syntheses/willison-vs-karpathy.excalidraw",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from willison-vs-karpathy"
             }
           },
           {
@@ -152,12 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "wiki/syntheses/willison-vs-karpathy.excalidraw",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of willison-vs-karpathy"
             }
           },
           {
@@ -175,7 +164,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 413.5
+    "width": 413.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,15 +181,18 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "ef095261f4303e65",
+  "active": "2e416238924eeaca",
   "lastOpenFiles": [
-    "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
-    "wiki/syntheses/ghosts-and-the-bitter-lesson.png",
-    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
+    "wiki/syntheses/willison-vs-karpathy.png",
     "Excalidraw/Drawing 2026-05-25 22.52.50.excalidraw.md",
+    "wiki/syntheses/willison-vs-karpathy.excalidraw",
+    "wiki/syntheses/willison-vs-karpathy.md",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
+    "wiki/areas/agentic-engineering.md",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.png",
     "Excalidraw",
     "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
-    "wiki/syntheses/willison-vs-karpathy.md",
     "wiki/topics/coding-agents.md",
     "wiki/sources/2026-05-23-subagents.md",
     "wiki/people/andrej-karpathy.md",
@@ -215,7 +208,6 @@
     "wiki/index.md",
     "wiki/people/simon-willison.md",
     "wiki/sources/2026-05-23-what-is-agentic-engineering.md",
-    "wiki/areas/agentic-engineering.md",
     "graph.png",
     "LLM Wiki Karpathy Pattern.md",
     "README.md",
