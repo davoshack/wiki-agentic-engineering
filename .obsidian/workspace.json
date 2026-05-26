@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "ba2032867a46ba1e",
+        "id": "47ada8b9e86f2c62",
         "type": "tabs",
         "children": [
           {
-            "id": "96d91982123854f8",
+            "id": "ef095261f4303e65",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "wiki/topics/coding-agents.md",
-                "mode": "source",
-                "source": false
+                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "coding-agents"
+              "icon": "excalidraw-icon",
+              "title": "ghosts-and-the-bitter-lesson.excalidraw"
             }
           }
         ]
@@ -94,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/topics/coding-agents.md",
+                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for coding-agents"
+              "title": "Backlinks for ghosts-and-the-bitter-lesson.excalidraw"
             }
           },
           {
@@ -113,12 +111,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wiki/topics/coding-agents.md",
+                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from coding-agents"
+              "title": "Outgoing links from ghosts-and-the-bitter-lesson.excalidraw"
             }
           },
           {
@@ -142,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wiki/topics/coding-agents.md",
+                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of coding-agents"
+              "title": "Outline of ghosts-and-the-bitter-lesson.excalidraw"
             }
           },
           {
@@ -182,20 +180,23 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "96d91982123854f8",
+  "active": "ef095261f4303e65",
   "lastOpenFiles": [
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
+    "wiki/syntheses/willison-vs-karpathy.md",
+    "wiki/topics/coding-agents.md",
     "wiki/sources/2026-05-23-subagents.md",
     "wiki/people/andrej-karpathy.md",
     "wiki/sources/2026-04-30-sequoia-ascent-karpathy.md",
     "raw/Sequoia Ascent 2026 summary.md",
-    "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
     "wiki/topics/agent-code-review.md",
     "wiki/topics/refactoring-with-agents.md",
     "wiki/topics/agent-native-infrastructure.md",
     "wiki/overview.md",
     "wiki/templates/person.md",
     "wiki/topics/software-3-0.md",
-    "wiki/syntheses/willison-vs-karpathy.md",
     "wiki/topics/verifiability.md",
     "wiki/index.md",
     "wiki/people/simon-willison.md",
@@ -208,9 +209,6 @@
     "wiki/sources/2026-05-23-writing-code-is-cheap-now.md",
     "raw/Subagents - Agentic Engineering Patterns.md",
     "wiki/topics/subagents.md",
-    "wiki/topics/git-with-agents.md",
-    "wiki/topics/agent-architecture.md",
-    "wiki/sources/2026-05-23-using-git-with-coding-agents.md",
     "Pasted image 20260523191453.png",
     "Excalidraw",
     "Untitled.canvas",

@@ -25,6 +25,19 @@ You never modify anything in `raw/`. That is the immutable source of truth.
 
 ---
 
+## Project skills
+
+Project-level skills live in `.claude/skills/`. Check this list before authoring artifacts
+that match a skill's domain — they encode conventions and methodology specific to this
+project that I should follow rather than improvise.
+
+- `.claude/skills/excalidraw-diagram/SKILL.md` — invoke whenever creating Excalidraw
+  diagrams (visualizing workflows, mental models, architectures, syntheses). Includes a
+  render-and-validate loop that's mandatory, not optional. References live in
+  `.claude/skills/excalidraw-diagram/references/`.
+
+---
+
 ## Directory layout
 
 ```
