@@ -147,3 +147,26 @@ practitioner's view of "scales with computation." Filed the answer as
 Suggested follow-up ingest: Sutton's [2019 essay](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
 would resolve the dangling external reference and anchor a `topics/bitter-lesson.md` page,
 with inbound wikilinks from [[verifiability]], [[agent-architecture]], and this synthesis.
+
+## [2026-05-25] meta   | Wired up the excalidraw-diagram skill; redid the synthesis diagram
+
+Discovered I'd authored an Excalidraw file from scratch instead of using the project's
+`excalidraw-diagram` skill — the skill wasn't surfaced because its folder
+(`excalidraw-diagram-skill/`) didn't match the `name: excalidraw-diagram` in its
+frontmatter (and its own internal references). Fixed:
+
+- Renamed `.claude/skills/excalidraw-diagram-skill/` → `.claude/skills/excalidraw-diagram/`
+  so auto-discovery works and the SKILL.md's render-command path resolves.
+- Fixed `.python-version` (was `excalidraw-render` — a project name — instead of `3.12`).
+- Patched the render template to pin `@excalidraw/excalidraw@0.18.1` without `?bundle`;
+  the unpinned `?bundle` variant on esm.sh has a broken transitive dependency
+  (`@braintree/sanitize-url@6.0.2`) that 404s.
+- Added a "Project skills" section to `CLAUDE.md` so the skill is referenced in always-
+  loaded context as a belt-and-suspenders against discovery failures.
+
+Then redid [[ghosts-and-the-bitter-lesson]]'s diagram following the skill end-to-end:
+read references, ran the design steps (the curve *is* the Ghost rather than a box labeled
+"Ghost"), built JSON, ran the mandatory render-view-fix loop for 3 iterations until both
+the vision check and the defect check passed. The new file is `.excalidraw` (raw JSON,
+per skill convention), the PNG is the embedded artifact in the synthesis markdown, and
+the old `.excalidraw.md` was deleted.

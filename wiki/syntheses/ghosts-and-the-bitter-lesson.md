@@ -11,6 +11,9 @@ sources: 1
 
 [[andrej-karpathy]]'s **ghosts-not-animals** framing and Richard Sutton's **The Bitter Lesson** (2019) are two anti-anthropomorphic stances about AI, applied at opposite ends of the same pipeline. Sutton speaks to the *researcher building the system*: don't bake in your human-knowledge intuitions about cognition — let general methods scale with compute. Karpathy speaks to the *practitioner using the resulting system*: don't anthropomorphize what comes out — it's not a human mind. Read together, they bracket the arc: same epistemic discipline applied at design-time and at use-time, with the alien artifact in between.
 
+![[ghosts-and-the-bitter-lesson.png]]
+*Diagram source: [[ghosts-and-the-bitter-lesson.excalidraw]] — built with the project's `excalidraw-diagram` skill.*
+
 > **Wiki note**: Sutton is not yet ingested. The Bitter Lesson half of this page draws on [the original 2019 essay](http://www.incompleteideas.net/IncIdeas/BitterLesson.html), not a wiki source page. Once ingested, this page should be updated to cite [[2026-XX-XX-bitter-lesson|the source page]] directly and a `topics/bitter-lesson.md` page should anchor the upstream theoretical claim.
 
 ## The two frames, compactly

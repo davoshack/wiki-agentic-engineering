@@ -11,12 +11,10 @@
             "id": "ef095261f4303e65",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "ghosts-and-the-bitter-lesson.excalidraw"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -92,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ghosts-and-the-bitter-lesson.excalidraw"
+              "title": "Backlinks"
             }
           },
           {
@@ -111,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from ghosts-and-the-bitter-lesson.excalidraw"
+              "title": "Outgoing links"
             }
           },
           {
@@ -140,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ghosts-and-the-bitter-lesson.excalidraw"
+              "title": "Outline"
             }
           },
           {
@@ -182,9 +177,10 @@
   },
   "active": "ef095261f4303e65",
   "lastOpenFiles": [
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
+    "wiki/syntheses/ghosts-and-the-bitter-lesson.png",
     "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw",
     "wiki/syntheses/ghosts-and-the-bitter-lesson.md",
-    "wiki/syntheses/ghosts-and-the-bitter-lesson.excalidraw.md",
     "wiki/syntheses/willison-vs-karpathy.md",
     "wiki/topics/coding-agents.md",
     "wiki/sources/2026-05-23-subagents.md",
