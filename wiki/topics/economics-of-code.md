@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, economics, habits, good-code, technical-debt, exploratory-prototyping, tokens, verifiability]
 created: 2026-05-23
-updated: 2026-05-25
+updated: 2026-05-26
 status: developing
-sources: 6
+sources: 7
 ---
 
 # Economics of code
@@ -38,7 +38,7 @@ The thesis isn't that good software is now free — it's that *delivering new co
 8. **The design affords future change** — [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) still applies (don't anticipate hypothetical futures), but don't make future change much harder than it needs to be either.
 9. **The relevant "ilities"** — accessibility, testability, reliability, security, maintainability, observability, scalability, usability — to the extent they apply to the class of software being built.
 
-Coding agents can help with most of this, but the human driving them remains responsible for ensuring the output meets the *specific* subset of "good" that matters for the current project.
+Coding agents can help with most of this, but the human driving them remains responsible for ensuring the output meets the *specific* subset of "good" that matters for the current project. Dimensions 1, 2, and 6 (*works*, *we know it works*, *protected by tests*) are the operational pressure that motivates [[agentic-testing]] — the practice of seeding sessions with the existing suite, building new code test-first, and supplementing with manual testing.
 
 ### New habits, partially formed
 
@@ -87,3 +87,4 @@ The practical reading: when scoping a project, ask not only "is this work cheap 
 - [[2026-05-23-how-coding-agents-work]]
 - [[2026-05-23-subagents]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
+- [[2026-05-26-first-run-the-tests]]

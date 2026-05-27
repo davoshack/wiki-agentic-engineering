@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, agent-architecture, llm-fundamentals, tokens, system-prompts, harness, reasoning, ghosts-vs-animals, mental-model]
 created: 2026-05-23
-updated: 2026-05-25
+updated: 2026-05-26
 status: developing
-sources: 2
+sources: 3
 ---
 
 # Agent architecture
@@ -71,6 +71,8 @@ assistant:
 
 The LLM continues from there. Most coding agents define **a dozen or more tools**. The most powerful are the code-execution tools: a `Bash()` tool for terminal commands, a `Python()` tool for Python — and these are what make agents *coding* agents in the sense defined in [[coding-agents]].
 
+**The browser-automation tool surface.** Once code execution is in hand, the next frontier is making the *running* application verifiable. [[2026-05-26-agentic-manual-testing]] surveys three tools that turn web UIs into something the agent can interact with the way a user would: [Playwright](https://playwright.dev/) (Microsoft, multi-binding, multi-engine), [agent-browser](https://github.com/vercel-labs/agent-browser) (Vercel; Playwright wrapper designed for agents), and [Rodney](https://github.com/simonw/rodney) (Willison; Chrome DevTools Protocol direct). These are concrete instances of [[agent-native-infrastructure]]: their `--help` text is written *as agent-onboarding documentation* and they pair naturally with the model's own vision capabilities (e.g. `rodney screenshot` → vLLM evaluation of the captured image). See [[agentic-testing]] for the full practice.
+
 ### System prompts
 
 Every conversation typically starts with an initial **system message** that's not shown to the user. It explains the available tools, the expected output format, and any behavioral constraints. **System prompts can be hundreds of lines long.** Willison points to the [OpenAI Codex system prompt as of March 2026](https://github.com/openai/codex/blob/rust-v0.114.0/codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md) as a clear public example.
@@ -107,3 +109,4 @@ The mechanics on this page describe *what* the agent is. Ghosts-not-animals is a
 
 - [[2026-05-23-how-coding-agents-work]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
+- [[2026-05-26-agentic-manual-testing]]

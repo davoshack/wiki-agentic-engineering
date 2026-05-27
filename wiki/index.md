@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-05-25
+updated: 2026-05-26
 ---
 
 # Index
@@ -37,6 +37,7 @@ question, read this first to find relevant pages, then drill into them.
 - [[subagents]] — dispatching a fresh copy of the agent with a new context window. Three flavors: exploratory (Claude Code's `Explore`), parallel (often on cheaper models like Haiku), specialist (code reviewer, test runner, debugger).
 - [[compound-engineering]] — end each project with a retrospective whose output is updated agent instructions (system prompt, harness, repo-level instruction files); quality compounds across runs. Karpathy's compact recipe (define context / tools / feedback loop / guardrails; let agents work; preserve understanding) is the target shape.
 - [[agent-code-review]] — the human owns the first review pass on agent-generated code; characteristics of a good agentic PR; evidence-of-work-done signals.
+- [[agentic-testing]] — testing as the verification layer: `First run the tests` to seed sessions, `Use red/green TDD` for new code, manual testing (`python -c`, `curl`, Playwright/Rodney) for what the suite misses; manual findings feed back into the suite via red/green so verification compounds. Short prompts as compressed software-engineering discipline.
 
 ### World-side
 
@@ -63,3 +64,6 @@ question, read this first to find relevant pages, then drill into them.
 - [[2026-05-23-how-coding-agents-work]] — Simon Willison, *Agentic Engineering Patterns* Ch. 6. Technical deep-dive on the harness + LLM + tools loop, tokens, token caching, system prompts, reasoning.
 - [[2026-05-23-using-git-with-coding-agents]] — Simon Willison, *Agentic Engineering Patterns* Ch. 7. Git is a key tool; core and advanced Git prompts; the "sort out this git mess" universal prompt; history rewriting as editorial work.
 - [[2026-05-23-subagents]] — Simon Willison, *Agentic Engineering Patterns* Ch. 8. Subagents preserve root context; three flavors (exploratory, parallel, specialist); Claude Code's `Explore` walked through with a real transcript.
+- [[2026-05-26-first-run-the-tests]] — Simon Willison, *Agentic Engineering Patterns*. The four-word session-seeder that forces the agent to discover the test harness and puts it in a testing mindset for the rest of the session.
+- [[2026-05-26-red-green-tdd]] — Simon Willison, *Agentic Engineering Patterns*. Test-first development is a "fantastic fit" for agents; the red step (confirming tests fail before implementation) is load-bearing; `Use red/green TDD` is shorthand for the full discipline.
+- [[2026-05-26-agentic-manual-testing]] — Simon Willison, *Agentic Engineering Patterns*. Code execution is the defining capability of a coding agent; manual testing patterns (`python -c`, `curl` exploration, Playwright / agent-browser / Rodney for web UIs); Showboat for capturing exec'd commands and outputs as "show your work" artifacts; manual findings feed back into the suite via red/green.

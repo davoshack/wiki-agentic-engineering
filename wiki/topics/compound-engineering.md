@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, workflow, retrospectives, agent-instructions, system-prompts]
 created: 2026-05-23
-updated: 2026-05-25
+updated: 2026-05-26
 status: developing
-sources: 3
+sources: 4
 ---
 
 # Compound engineering
@@ -25,6 +25,8 @@ The loop is simple:
 Willison's framing in [[2026-05-23-ai-should-help-us-produce-better-code]] places this inside a broader argument about quality: small improvements compound, and quality work that used to be "too time-consuming to justify" is now cheap. Compound engineering is the mechanism that turns each cheap improvement into a permanent capability.
 
 This topic also connects to [[hoarding-working-examples]] from a different angle: hoarding is about accumulating *artifacts* (working code) for reuse; compound engineering is about accumulating *instructions* (how the agent should behave) for reuse. Both turn one-time effort into persistent leverage; they're complementary.
+
+A third compounding loop sits at the suite level rather than the harness level. [[agentic-testing]] describes the *manual finding → red/green TDD → permanent regression test* motion: anything caught during manual testing is fixed by writing a failing test first, then implementing the fix. Each catch becomes durable verification the next agent run inherits. The same loop shape — *transient signal → durable instruction* — works at three granularities: the test suite (per-feature), the repo's `CLAUDE.md`-style files (per-project), and the user/team-level system prompt (cross-project).
 
 ### What "the instructions" actually are
 
@@ -59,3 +61,4 @@ The aspirational endpoint Karpathy gestures at: *"I should be able to say 'build
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-23-how-coding-agents-work]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
+- [[2026-05-26-agentic-manual-testing]]

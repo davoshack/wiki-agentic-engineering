@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, code-review, pull-requests, collaboration, anti-patterns]
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-26
 status: developing
-sources: 2
+sources: 3
 ---
 
 # Agent code review
@@ -38,6 +38,8 @@ Because it's so easy now to drop unreviewed code on other people, Willison recom
 
 These are read as a promise to the reviewer that their time will not be wasted digging into details you skipped past.
 
+[[2026-05-26-agentic-manual-testing]] gives this requirement a concrete substrate. Willison's [Showboat](https://github.com/simonw/showboat) records a Markdown document of an agentic manual-testing run, with `note`, `exec` (records command + real output, designed to discourage the agent from writing what it *hoped* had happened), and `image` (e.g. screenshots from Rodney) — precisely the evidence-of-work-done signals this checklist asks for, in artifact form. The same chapter also pairs nicely with [[agentic-testing]]'s automated side: "the tests pass" is itself an evidence signal, and the *manual finding → red/green → permanent test* loop produces a tighter PR than either mode alone.
+
 ### The relationship to async refactoring
 
 The async-agent workflow described in [[refactoring-with-agents]] produces PRs as its primary output — so this topic is the *governance layer* on top of that pattern. Asynchronous code production does not imply asynchronous human responsibility; the author still owns the first review pass regardless of how the code was produced.
@@ -53,3 +55,4 @@ The async-agent workflow described in [[refactoring-with-agents]] produces PRs a
 
 - [[2026-05-23-anti-patterns-things-to-avoid]]
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
+- [[2026-05-26-agentic-manual-testing]]

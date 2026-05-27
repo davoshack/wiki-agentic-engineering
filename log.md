@@ -189,3 +189,35 @@ Passed the render-view-fix loop on iteration 1 — Venn geometry was planned wit
 math first (verified bullet x-coordinates fall inside their intended zones at the
 relevant y-coordinates), so no defects to fix on the first render. PNG embedded in
 [[willison-vs-karpathy]].
+
+## [2026-05-26] ingest | Simon Willison, *Agentic Engineering Patterns* — testing trio
+
+Fourth Willison ingest. Three short chapters on testing processed together as a unit,
+per Juan: *First run the tests*, *Red/green TDD*, *Agentic manual testing*. Judgment
+call confirmed with Juan: synthesize all three into one new topic page
+[[agentic-testing]] rather than split into automated vs manual subpages — the three
+modes describe a single compounding loop and read better together.
+
+Pages created:
+- Sources: [[2026-05-26-first-run-the-tests]], [[2026-05-26-red-green-tdd]], [[2026-05-26-agentic-manual-testing]]
+- Topic: [[agentic-testing]] (synthesizes automated TDD + manual testing + four-word-prompt-as-compressed-discipline)
+
+Pages updated:
+- [[coding-agents]] — strengthened the code-execution-as-defining-capability claim with the new chapter's opening line; pointer to [[agentic-testing]]; source count to 8.
+- [[economics-of-code]] — connected the *tested* / *we know it works* dimensions of the 9-point checklist to [[agentic-testing]]; source count to 7.
+- [[verifiability]] — added a pointer that [[agentic-testing]] is the operational practice that wires the verifier into a project; noted browser automation as making previously-hard-to-verify UI substrates verifiable; source count to 4.
+- [[agent-code-review]] — added a Showboat / exec-capture paragraph as the concrete substrate for evidence-of-work-done; source count to 3.
+- [[compound-engineering]] — added the *manual finding → red/green → permanent test* loop as the suite-level compounding motion (third granularity alongside repo files and the system prompt); source count to 4.
+- [[agent-architecture]] — added a browser-automation tool-surface paragraph (Playwright / agent-browser / Rodney) with the vLLM-screenshot pairing; source count to 3.
+- [[agent-native-infrastructure]] — added Rodney's `--help`-as-agent-onboarding and Showboat's `exec` mechanical-capture as worked instances of the thesis at the dev-tools layer; source count to 2.
+- [[agentic-engineering]] (area) — added an *agentic-testing* habit bullet; source count to 12.
+- [[simon-willison]] — added "tool-builder, not just tool-user" note (Rodney, Showboat, `llm`); source count to 11.
+- `wiki/overview.md` — cross-cutting habits expanded from three to four (added agentic-testing); "eight chapters" → "eleven chapters"; source count to 12.
+- `wiki/index.md` — added [[agentic-testing]] to the Practices group; added the three new source entries.
+
+Pattern worth flagging across these chapters: *four-word prompts as compressed
+discipline.* "First run the tests" and "Use red/green TDD" each load a substantial
+chunk of pre-existing software-engineering practice. This is the same family as
+[[git-with-agents]]'s *"sort out this git mess for me"* — compact phrases that get
+disproportionate leverage from models trained on years of human engineering text.
+Named explicitly in [[agentic-testing]].

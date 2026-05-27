@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, verifiability, jagged-intelligence, rl, feedback-loops]
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-05-26
 status: developing
-sources: 1
+sources: 4
 ---
 
 # Verifiability and jagged intelligence
@@ -61,8 +61,9 @@ The most obvious verifiable domains (coding, math) are already saturated. Many *
 
 ### Connection to the rest of the wiki
 
-- **Coding** is the canonical verifiable domain. [[coding-agents]] are effective precisely because coding fits the verifiability profile. The "feedback loops" Karpathy names map directly onto Willison's [[economics-of-code|9-point good-code]] requirement that code be *tested* and *known to work*.
+- **Coding** is the canonical verifiable domain. [[coding-agents]] are effective precisely because coding fits the verifiability profile. The "feedback loops" Karpathy names map directly onto Willison's [[economics-of-code|9-point good-code]] requirement that code be *tested* and *known to work*. The operational practice that wires the verifier into a specific project is [[agentic-testing]] — tests are the canonical reward signal, and Willison's chapter cluster on testing is largely a guide to making it always-available and cheap to extend.
 - **Test-runner subagents** ([[subagents]]) are an architectural use of verifiability — running the test suite is the canonical verifier.
+- **Browser automation for web UIs** ([[agentic-testing]]) is a worked example of *making* a previously hard-to-verify substrate verifiable: Playwright / agent-browser / Rodney turn UI behaviour into something the agent (and the suite) can check.
 - **`git bisect`** ([[git-with-agents]]) is verifiability applied to history — the bug-condition test is the reward signal.
 - **Compound engineering** ([[compound-engineering]]) is a verifiability practice at the workflow level — the retrospective is a structured signal that the agent harness reads next time.
 - **Tasteful simplification** (Karpathy's `microGPT` story) is an **off-rails** task — *"the models hate this"* — and a useful warning that not everything productive is verifiable.
@@ -78,3 +79,6 @@ The most obvious verifiable domains (coding, math) are already saturated. Many *
 ## Sources
 
 - [[2026-04-30-sequoia-ascent-karpathy]]
+- [[2026-05-26-first-run-the-tests]]
+- [[2026-05-26-red-green-tdd]]
+- [[2026-05-26-agentic-manual-testing]]

@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, agent-native, sensors, actuators, mcp, infrastructure, founder-opportunity]
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-05-26
 status: developing
-sources: 1
+sources: 2
 ---
 
 # Agent-native infrastructure
@@ -65,6 +65,7 @@ The flip side of the thesis is a wedge. Founders building **net-new** infrastruc
 - **MCP servers** specifically appear in [[subagents]] (vendor docs link out to MCP-based integrations) and in Karpathy's list here. MCP is becoming the standardized substrate for actuators.
 - **Headless setup flows** connect to [[refactoring-with-agents]] — the async-agent worktree workflow only works when the surrounding deployment toolchain doesn't require a human in the UI.
 - **Copy-pasteable agent instructions** are the public-facing form of the same artifact that [[hoarding-working-examples]] is about — Software 3.0 skills shipped as text blocks (the OpenClaw installer example in [[software-3-0]]).
+- **Agent-onboarding `--help` text and exec-capturing artifact tools** are a worked instance of the thesis at the developer-tools layer. [[2026-05-26-agentic-manual-testing]] describes [Rodney](https://github.com/simonw/rodney) (whose `--help` is written so the agent learns both *what the tool is* and *how to use it* from a single CLI invocation, after `uvx`-installing itself on first call) and [Showboat](https://github.com/simonw/showboat) (whose `exec` command mechanically captures real command output to discourage agents from writing what they *hoped* had happened). Both treat the agent-as-user as a first-class design constraint. See [[agentic-testing]].
 - **Auditable actions** and **safe permissioning** are the infrastructure-level expression of [[agent-code-review]]'s concern: the human owns responsibility for what the agent did.
 
 ## Open questions
@@ -78,3 +79,4 @@ The flip side of the thesis is a wedge. Founders building **net-new** infrastruc
 ## Sources
 
 - [[2026-04-30-sequoia-ascent-karpathy]]
+- [[2026-05-26-agentic-manual-testing]]

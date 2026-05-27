@@ -2,9 +2,9 @@
 type: synthesis
 tags: [meta, agentic-engineering]
 created: 2026-05-22
-updated: 2026-05-25
+updated: 2026-05-26
 status: developing
-sources: 9
+sources: 12
 ---
 
 # Overview
@@ -15,7 +15,7 @@ The LLM keeps this page current. When a new source meaningfully shifts the pictu
 
 ## Current picture
 
-The wiki now rests on two primary voices: eight chapters of [[simon-willison]]'s *Agentic Engineering Patterns* guide and [[andrej-karpathy]]'s [[2026-04-30-sequoia-ascent-karpathy|Sequoia Ascent 2026 fireside chat]]. Willison gives us the **practices and operational discipline**; Karpathy gives us the **paradigms and analytic frames** — see [[willison-vs-karpathy]] for the explicit cross-author comparison. Together they make a self-consistent argument across five layers.
+The wiki now rests on two primary voices: eleven chapters of [[simon-willison]]'s *Agentic Engineering Patterns* guide and [[andrej-karpathy]]'s [[2026-04-30-sequoia-ascent-karpathy|Sequoia Ascent 2026 fireside chat]]. Willison gives us the **practices and operational discipline**; Karpathy gives us the **paradigms and analytic frames** — see [[willison-vs-karpathy]] for the explicit cross-author comparison. Together they make a self-consistent argument across five layers.
 
 ### 1. What the field is — paradigm and definition
 
@@ -53,11 +53,12 @@ For founders, the wedge that emerges: **valuable, verifiable, undertrained** dom
 
 ### Cross-cutting habits
 
-Three complementary habits sit underneath everything:
+Four complementary habits sit underneath everything:
 
 - **[[hoarding-working-examples|Hoard working examples]]** — keep a personal collection of runnable code that proves what you know how to do; point agents at it via `curl`, filesystem search, or `git clone`. Parallel subagents on cheap models accelerate hoard growth. Karpathy's `microGPT` and the LLM Wiki Pattern are canonical distilled artifacts in this family.
 - **[[git-with-agents|Use Git ambitiously]]** — agents are fluent in basic *and* advanced Git, which removes the recall cost. `git bisect` becomes routine because agents handle the test-condition boilerplate. "Review changes made today" is a cheap session-seeding move.
 - **[[compound-engineering|Compound across sessions]]** — retrospectives produce harness edits that persist. Hoarding accumulates *artifacts*; compound engineering accumulates *instructions*. Both turn one-time effort into permanent leverage.
+- **[[agentic-testing|Wire the verifier in]]** — `First run the tests` to seed a session and put the agent in a testing mindset; `Use red/green TDD` to build new code test-first; manual testing (`python -c`, `curl`, Playwright/Rodney) for what the suite misses; route every manual finding back into the suite via red/green so verification compounds. Tests are the canonical reward signal (the [[verifiability|verifiability]] frame at workflow level), and the four-word prompt pattern shows how much pre-trained engineering discipline a compact phrase can activate.
 
 ### State of the picture
 

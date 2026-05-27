@@ -2,9 +2,9 @@
 type: area
 tags: [agentic-engineering, meta]
 created: 2026-05-23
-updated: 2026-05-25
+updated: 2026-05-26
 status: developing
-sources: 9
+sources: 12
 ---
 
 # Agentic engineering
@@ -30,6 +30,7 @@ The human's job therefore moves up the stack. With typing no longer the bottlene
 - **[[git-with-agents|Use Git ambitiously]]** — coding agents are fluent in Git's full surface (basic *and* advanced). The human's job shifts from remembering recipes to staying aware of what's possible. The "review changes made today" prompt cheaply seeds a fresh session; "sort out this git mess for me" handles formerly painful merge/cherry-pick states; `git bisect` upgrades from occasional-use to routine because agents handle the test-condition boilerplate.
 - **[[subagents|Dispatch subagents to preserve context]]** — context windows are a hard constraint (good results typically below ~200K tokens even when limits are ~1M). Subagents are the architectural response: dispatch a fresh copy of the agent with its own context for exploration (Claude Code's `Explore`), parallel file edits (often on cheaper models like Haiku), or specialist roles (code reviewer, test runner, debugger). Cautionary: don't over-fragment — the value is context preservation, not maximalist orchestration.
 - **[[verifiability|Ask whether you're on the model's rails]]** — Karpathy's analytic frame: traditional software automates what you can *specify*; LLMs automate what you can *verify*. Verifiable, heavily-trained tasks (coding, math, games) are where models fly; outside those circuits they fail in "bizarrely basic ways" (the jagged-intelligence corollary). Scope projects accordingly.
+- **[[agentic-testing|Wire the verifier into every session]]** — tests are the canonical reward signal. Seed sessions with `First run the tests`; build new code with `Use red/green TDD`; supplement with manual testing (`python -c`, `curl` exploration, Playwright/Rodney for web UIs). Each manual finding feeds back into the suite. Short prompts here compress substantial chunks of pre-existing software-engineering discipline.
 - **[[agent-native-infrastructure|Build for the agent, not just the human]]** — most software is still designed for humans clicking screens. Karpathy's frame: the world has to be rewritten with **sensors** (turn world-state into digital info) and **actuators** (let agents change things), exposed through markdown docs, CLIs, APIs, MCP servers, structured logs, copy-pasteable instructions. The MenuGen deployment story is the running benchmark for how mature the infrastructure layer is.
 
 A vocabulary distinction worth preserving: agentic engineering is **not** the same as **vibe coding** ([[coding-agents]] elaborates). Vibe coding, in Karpathy's original narrow sense, is unreviewed prototype-quality LLM output; agentic engineering covers the full spectrum up to and including production-grade work.
@@ -54,3 +55,6 @@ The field is early. Best practices are being figured out in public, and the *Age
 - [[2026-05-23-using-git-with-coding-agents]]
 - [[2026-05-23-subagents]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
+- [[2026-05-26-first-run-the-tests]]
+- [[2026-05-26-red-green-tdd]]
+- [[2026-05-26-agentic-manual-testing]]
