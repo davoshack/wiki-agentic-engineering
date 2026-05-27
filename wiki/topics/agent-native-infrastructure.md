@@ -4,7 +4,7 @@ tags: [agentic-engineering, agent-native, sensors, actuators, mcp, infrastructur
 created: 2026-05-25
 updated: 2026-05-26
 status: developing
-sources: 2
+sources: 3
 ---
 
 # Agent-native infrastructure
@@ -66,6 +66,7 @@ The flip side of the thesis is a wedge. Founders building **net-new** infrastruc
 - **Headless setup flows** connect to [[refactoring-with-agents]] — the async-agent worktree workflow only works when the surrounding deployment toolchain doesn't require a human in the UI.
 - **Copy-pasteable agent instructions** are the public-facing form of the same artifact that [[hoarding-working-examples]] is about — Software 3.0 skills shipped as text blocks (the OpenClaw installer example in [[software-3-0]]).
 - **Agent-onboarding `--help` text and exec-capturing artifact tools** are a worked instance of the thesis at the developer-tools layer. [[2026-05-26-agentic-manual-testing]] describes [Rodney](https://github.com/simonw/rodney) (whose `--help` is written so the agent learns both *what the tool is* and *how to use it* from a single CLI invocation, after `uvx`-installing itself on first call) and [Showboat](https://github.com/simonw/showboat) (whose `exec` command mechanically captures real command output to discourage agents from writing what they *hoped* had happened). Both treat the agent-as-user as a first-class design constraint. See [[agentic-testing]].
+- **A2A and MCP at the team / organization scale.** [[2026-05-26-agentic-engineering-swarms]] is the wiki's first source operating *concretely* on inter-agent and agent-to-system protocols at production scale. Worker Agents speak **A2A (agent-to-agent)** natively, and **MCP adapters** wrap any agent or system that doesn't, keeping the architecture IDE-agnostic. MCP gets a second source backing it; A2A is named for the first time. This is the team-scale instance of the sensors-and-actuators thesis — protocols standardized enough that arbitrary agents and systems can be composed without bespoke integrations. The Leader Agent's **common tool gateway** is the access-control + audit layer that "safe permissioning" and "auditable actions" point at in the inventory above.
 - **Auditable actions** and **safe permissioning** are the infrastructure-level expression of [[agent-code-review]]'s concern: the human owns responsibility for what the agent did.
 
 ## Open questions
@@ -80,3 +81,4 @@ The flip side of the thesis is a wedge. Founders building **net-new** infrastruc
 
 - [[2026-04-30-sequoia-ascent-karpathy]]
 - [[2026-05-26-agentic-manual-testing]]
+- [[2026-05-26-agentic-engineering-swarms]]

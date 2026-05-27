@@ -4,7 +4,7 @@ tags: [agentic-engineering, code-review, pull-requests, collaboration, anti-patt
 created: 2026-05-23
 updated: 2026-05-26
 status: developing
-sources: 3
+sources: 4
 ---
 
 # Agent code review
@@ -44,6 +44,18 @@ These are read as a promise to the reviewer that their time will not be wasted d
 
 The async-agent workflow described in [[refactoring-with-agents]] produces PRs as its primary output — so this topic is the *governance layer* on top of that pattern. Asynchronous code production does not imply asynchronous human responsibility; the author still owns the first review pass regardless of how the code was produced.
 
+### Review as the new bottleneck at team scale
+
+[[2026-05-26-agentic-engineering-swarms]] surfaces a striking organization-scale corollary: in a Cisco pilot of [[multi-agent-coordination|coordinated Worker / Leader Agents]], *"PR review process itself became the bottleneck introduced by human-in-the-loop"* once the rest of the delivery cycle was compressed. The human-owned review gate is *both* the trust mechanism that this page is built around *and* the rate limiter once everything around it gets fast.
+
+The implication is not that the gate should be removed — Willison's anti-pattern still stands — but that the gate's design (what it checks, what evidence it demands, who performs it, in what window) is now where further compression has to come from. Three sub-questions the wiki is tracking:
+
+- Which checks must remain human-only (judgment, taste, security) and which can move to a reviewer agent?
+- Do the *evidence-of-work-done* artifacts described above (manual-test notes, Showboat exec captures, screenshots) actually shorten human review time enough to matter?
+- Is a **two-tier** gate (agent reviewer does the surface pass, human does a much smaller spot-check) the right shape?
+
+See [[practitioner-discipline-vs-control-plane]] for the cross-cutting framing.
+
 ## Open questions
 
 - How does this scale to a team where multiple people are running async agents in parallel and PRs are piling up? Are there review-load patterns that work?
@@ -56,3 +68,4 @@ The async-agent workflow described in [[refactoring-with-agents]] produces PRs a
 - [[2026-05-23-anti-patterns-things-to-avoid]]
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-26-agentic-manual-testing]]
+- [[2026-05-26-agentic-engineering-swarms]]

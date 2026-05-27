@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, definitions, coding-agents, vibe-coding, async-agents]
+tags: [agentic-engineering, definitions, coding-agents, vibe-coding, async-agents, multi-agent]
 created: 2026-05-23
 updated: 2026-05-26
 status: developing
-sources: 8
+sources: 9
 ---
 
 # Coding agents
@@ -64,6 +64,10 @@ preserve human understanding
 
 The first four are mechanical (and lean on [[agent-architecture]], [[verifiability]], and the tool surface); *"preserve human understanding"* is the line he keeps returning to — agents change the workflow but the human is still the bottleneck on knowing what's worth building and what result is suspicious. The broader paradigm-level framing for *why* the work is shaped this way is [[software-3-0]] — humans now program LLMs through context, tools, examples, and instructions, with the LLM as the interpreter.
 
+### Coding agents as components inside larger systems
+
+At organizational scale the coding agent stops being the outer loop. [[2026-05-26-agentic-engineering-swarms]] is explicit: *"Codex-class models are often embedded within Worker Agents or as a component in the workflow as reasoning or code-generation engines."* In that picture the coding agent is the **per-step reasoning engine** inside a [[multi-agent-coordination|Worker Agent]] whose own outer loop is *intent → plan → execute → validate*, coordinated across teams by a Leader Agent. The Willison/Karpathy practitioner discipline still applies — *something* still has to translate intent into code, run tests, write good PR descriptions, hoard working examples — it just gets industrialised inside the control plane. The two layers compose. See [[practitioner-discipline-vs-control-plane]] for how the two senses of *"agentic engineering"* relate.
+
 ## Open questions
 
 - What's the right level of detail when specifying a problem to a coding agent? Too vague and it drifts; too detailed and you're back to typing the code yourself.
@@ -81,3 +85,4 @@ The first four are mechanical (and lean on [[agent-architecture]], [[verifiabili
 - [[2026-05-23-how-coding-agents-work]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
 - [[2026-05-26-agentic-manual-testing]]
+- [[2026-05-26-agentic-engineering-swarms]]

@@ -221,3 +221,39 @@ chunk of pre-existing software-engineering practice. This is the same family as
 [[git-with-agents]]'s *"sort out this git mess for me"* — compact phrases that get
 disproportionate leverage from models trained on years of human engineering text.
 Named explicitly in [[agentic-testing]].
+
+## [2026-05-26] ingest | Kumar & Ramagopal (Cisco), *Agentic Engineering: How Swarms of AI Agents Are Redefining Software Engineering*
+
+Major ingest — first non-Willison, non-Karpathy source; first enterprise / team-scale
+vantage in the wiki; first source to use *"agentic engineering"* in a sense
+substantively different from the practitioner-discipline definition the wiki had been
+developing. Three judgment calls confirmed with Juan: surface the definitional
+contradiction in the area page and overview rather than silently overwriting; one
+consolidated topic page ([[multi-agent-coordination]]) rather than two; one combined
+person page ([[kumar-ramagopal]]) rather than two thin ones. Also filed a dedicated
+cross-cutting synthesis ([[practitioner-discipline-vs-control-plane]]) because the
+split is load-bearing enough to warrant its own page.
+
+Pages created:
+- Source: [[2026-05-26-agentic-engineering-swarms]]
+- Topic: [[multi-agent-coordination]] — Worker/Leader pattern, A2A vs MCP, the four-stage Worker loop, LangGraph/LangSmith/LangMem, pilot results, the PR-review-bottleneck observation.
+- Person: [[kumar-ramagopal]] (combined page).
+- Synthesis: [[practitioner-discipline-vs-control-plane]] — names the two senses of the term, shows how they compose (coding agents are components inside Worker Agents), tracks the vocabulary trajectory.
+
+Pages updated:
+- [[agentic-engineering]] (area) — added a callout at the top carrying both definitions side by side; added a new habit bullet pointing to [[multi-agent-coordination]]; source count to 13.
+- [[overview]] — promoted to three voices; added a new "6. The team / organization side — the control plane" section; "State of the picture" rewritten (gap partly filled; second-enterprise source now load-bearing); two new open questions (vocabulary trajectory, swarm-scale safety); the verification-and-review open question expanded with the bottleneck observation; source count to 13.
+- [[coding-agents]] — added a "Coding agents as components inside larger systems" section repositioning the Willison/Karpathy subject as a primitive inside Worker Agents; source count to 9.
+- [[subagents]] — added a "Subagents vs. multi-agent swarms — same word, different unit" disambiguation; source count to 2.
+- [[compound-engineering]] — extended the *transient signal → durable instruction* loop from three granularities to four (added swarm memory / LangMem as the organization-scale analog); source count to 5.
+- [[agent-native-infrastructure]] — added an A2A / MCP / Leader-Agent-tool-gateway paragraph; MCP gets a second source backing it; A2A is named for the first time; source count to 3.
+- [[agentic-testing]] — added a "Post-PR testing as the new compression frontier" section (Cisco pilot's headline finding: gains came from compressing post-PR-merge testing, not faster code generation); source count to 4.
+- [[agent-code-review]] — added a "Review as the new bottleneck at team scale" section; explicit three-sub-question framing for what to do about it; source count to 4.
+- `wiki/index.md` — new "Organization / team scale" topic section; new person entry; new synthesis entry; new source entry.
+
+Definitional-contradiction handling note: Per CLAUDE.md, the wiki carries both senses
+of *"agentic engineering"* explicitly rather than silently picking one. The
+practitioner-discipline sense remains primary in [[agentic-engineering]] (area) but
+the control-plane sense is surfaced at the top of that page with pointers to
+[[multi-agent-coordination]] and [[practitioner-discipline-vs-control-plane]]. Worth
+revisiting whether the field settles on one meaning over time.

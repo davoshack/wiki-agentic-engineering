@@ -39,6 +39,10 @@ question, read this first to find relevant pages, then drill into them.
 - [[agent-code-review]] — the human owns the first review pass on agent-generated code; characteristics of a good agentic PR; evidence-of-work-done signals.
 - [[agentic-testing]] — testing as the verification layer: `First run the tests` to seed sessions, `Use red/green TDD` for new code, manual testing (`python -c`, `curl`, Playwright/Rodney) for what the suite misses; manual findings feed back into the suite via red/green so verification compounds. Short prompts as compressed software-engineering discipline.
 
+### Organization / team scale
+
+- [[multi-agent-coordination]] — Worker / Leader architecture, A2A vs. MCP protocols, the four-stage Worker loop (intent → plan + notify → execute + checkpoint → validate + persist), LangGraph + LangSmith + LangMem as the substrate. The second sense of *"agentic engineering"* — a multi-agent control plane that wraps coding-agent sessions, not replaces them. Cisco pilot: 93% debug-time reduction; *"PR review became the bottleneck."*
+
 ### World-side
 
 - [[agent-native-infrastructure]] — when the user is an agent acting for a human, products need sensors and actuators: markdown docs, CLIs, APIs, MCP servers, structured logs, copy-pasteable instructions, safe permissioning, headless setup flows. MenuGen deployment as the running benchmark.
@@ -47,11 +51,13 @@ question, read this first to find relevant pages, then drill into them.
 
 - [[simon-willison]] — author of *Agentic Engineering Patterns*; practitioner-oriented, definitionally disciplined, frames many patterns as extensions of pre-LLM craft.
 - [[andrej-karpathy]] — co-founder of OpenAI; Tesla Autopilot; Eureka Labs. Paradigm-namer (Software 1.0/2.0/3.0; vibe coding; agentic engineering; verifiability; jagged intelligence; ghosts not animals). Originator of the LLM Wiki Pattern that inspired this wiki.
+- [[kumar-ramagopal]] — Renuka Kumar (Cisco, Principal SWE / Director) and Prashanth Ramagopal (Cisco, Senior Director of Engineering). Combined author page for a single co-authored LangChain-blog post on a Cisco multi-agent coordination pilot. First enterprise / team-scale vantage in the wiki, and the source of the wiki's second sense of *"agentic engineering"*.
 
 ## Syntheses
 
 - [[willison-vs-karpathy]] — the wiki's first cross-author synthesis. Willison gives practices and operational discipline; Karpathy gives paradigms and analytic frames. Where they overlap, where they diverge, what's still missing from both.
 - [[ghosts-and-the-bitter-lesson]] — anti-anthropomorphism at two stages: Sutton (don't encode your cognition intuitions into the *training*) and Karpathy (don't project your cognition intuitions onto the *resulting system*). The ghost is the artifact of taking Sutton seriously; jagged intelligence is the corollary of "scales with computation." Sutton not yet ingested.
+- [[practitioner-discipline-vs-control-plane]] — names the wiki's first definitional split: Willison/Karpathy use *agentic engineering* to mean the practitioner discipline (human + coding agent); Kumar & Ramagopal use it to mean the control plane (swarm of role-differentiated agents coordinated by a Leader). The two compose — coding agents are components inside Worker Agents — and the PR-review gate is exposed as both the trust mechanism and the rate limiter when the rest of the cycle compresses.
 
 ## Sources
 
@@ -67,3 +73,4 @@ question, read this first to find relevant pages, then drill into them.
 - [[2026-05-26-first-run-the-tests]] — Simon Willison, *Agentic Engineering Patterns*. The four-word session-seeder that forces the agent to discover the test harness and puts it in a testing mindset for the rest of the session.
 - [[2026-05-26-red-green-tdd]] — Simon Willison, *Agentic Engineering Patterns*. Test-first development is a "fantastic fit" for agents; the red step (confirming tests fail before implementation) is load-bearing; `Use red/green TDD` is shorthand for the full discipline.
 - [[2026-05-26-agentic-manual-testing]] — Simon Willison, *Agentic Engineering Patterns*. Code execution is the defining capability of a coding agent; manual testing patterns (`python -c`, `curl` exploration, Playwright / agent-browser / Rodney for web UIs); Showboat for capturing exec'd commands and outputs as "show your work" artifacts; manual findings feed back into the suite via red/green.
+- [[2026-05-26-agentic-engineering-swarms]] — Renuka Kumar & Prashanth Ramagopal (Cisco), guest post on the LangChain blog (2026-04-17). Multi-agent coordination model with Worker / Leader agents on LangGraph + LangSmith + LangMem; A2A and MCP protocols; second sense of *"agentic engineering"*; concrete Cisco pilot numbers (93% debug-time, 65% dev-time reductions; 200+ hours saved across 512 sessions); *"PR review process itself became the bottleneck"*.

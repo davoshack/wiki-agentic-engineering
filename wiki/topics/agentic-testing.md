@@ -4,7 +4,7 @@ tags: [agentic-engineering, testing, tdd, manual-testing, browser-automation, pr
 created: 2026-05-26
 updated: 2026-05-26
 status: developing
-sources: 3
+sources: 4
 ---
 
 # Agentic testing
@@ -144,6 +144,12 @@ The broader idea Willison flags: *agents showing their work.* Demos and document
 experiments are how reviewers confirm the agent comprehensively solved the problem;
 the substrate for routinely producing them is now mature.
 
+### Post-PR testing as the new compression frontier
+
+[[2026-05-26-agentic-engineering-swarms]] adds an organization-scale corollary. In the Cisco pilot, the primary gain *wasn't* faster code generation — *"AI coding agents already perform well"* at that — but **compressing downstream workflows for functional testing after PR merge through coordinated agent execution.** Once code-gen is fast and the test suite is agent-runnable, the surface area for further compression is exactly the *post-merge* verification work that used to consume most of the cycle: integration tests, environment-specific tests, smoke tests, cross-service validation.
+
+The headline observation from that pilot — *"PR review process itself became the bottleneck introduced by human-in-the-loop"* — is the team-scale corollary of [[agent-code-review]]: the human-owned review gate is both the trust mechanism and the rate limiter, and *evidence-of-work-done* artifacts (Showboat documents, exec captures) are part of how a faster review gate stays trustworthy. See [[practitioner-discipline-vs-control-plane]] for the open question this raises.
+
 ### Why this slots cleanly into the rest of the wiki
 
 - [[verifiability]] explains *why* coding is on the model's rails; agentic testing is
@@ -183,3 +189,4 @@ the substrate for routinely producing them is now mature.
 - [[2026-05-26-first-run-the-tests]]
 - [[2026-05-26-red-green-tdd]]
 - [[2026-05-26-agentic-manual-testing]]
+- [[2026-05-26-agentic-engineering-swarms]]

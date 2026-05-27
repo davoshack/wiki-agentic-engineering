@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, subagents, context-management, parallelism, specialist-agents]
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-26
 status: developing
-sources: 1
+sources: 2
 ---
 
 # Subagents
@@ -32,6 +32,15 @@ Willison notes: *"It's interesting to see models prompt themselves in this way �
 - **Test runner** — runs the test suite. *Particularly valuable when the suite is large and verbose, because the subagent can hide the full output from the main agent and report back only failures.* This is a context-preservation play, not just a parallelism one.
 - **Debugger** — specialized in isolating reproduction steps and root causes; spends its token allowance reasoning through the codebase and running snippets.
 
+### Subagents vs. multi-agent swarms — same word, different unit
+
+The word *"swarm"* gets used at two different scales in the literature and the wiki keeps them distinct.
+
+- **Willison's subagents** (this page) are *fresh copies of the same coding agent*, dispatched **by a parent agent within a single user-driven session**, primarily to **preserve root context**. They're transient: they live and die inside the session that spawned them.
+- **[[multi-agent-coordination|Worker-Agent swarms]]** ([[2026-05-26-agentic-engineering-swarms|Kumar & Ramagopal]]) are *persistent, role-differentiated* agents (development, testing, debugging, ops) coordinated by a **Leader Agent** across sessions and team boundaries. They communicate via the A2A protocol and accumulate long-term state in LangMem.
+
+The two patterns are not in conflict — they sit at different organizational scales. A Worker Agent in a Kumar/Ramagopal swarm might internally dispatch Willison-style subagents (parallel file edits, specialist test runner, etc.) to do its work. *Parent → subagent* is the within-session axis; *Leader ↔ Worker → other Worker* is the cross-session, cross-team axis.
+
 ### Cautionary note
 
 *"While it can be tempting to go overboard breaking up tasks across dozens of different specialist subagents, it's important to remember that the main value of subagents is in preserving that valuable root context and managing token-heavy operations. Your root coding agent is perfectly capable of debugging or reviewing its own output provided it has the tokens to spare."* The right question to ask before spinning out a specialist: *will this operation eat enough of the root context to hurt the parent's ability to finish the task?* If not, the simpler architecture wins.
@@ -54,3 +63,4 @@ Willison notes: *"It's interesting to see models prompt themselves in this way �
 ## Sources
 
 - [[2026-05-23-subagents]]
+- [[2026-05-26-agentic-engineering-swarms]]

@@ -1,10 +1,10 @@
 ---
 type: topic
-tags: [agentic-engineering, workflow, retrospectives, agent-instructions, system-prompts]
+tags: [agentic-engineering, workflow, retrospectives, agent-instructions, system-prompts, long-term-memory]
 created: 2026-05-23
 updated: 2026-05-26
 status: developing
-sources: 4
+sources: 5
 ---
 
 # Compound engineering
@@ -26,7 +26,14 @@ Willison's framing in [[2026-05-23-ai-should-help-us-produce-better-code]] place
 
 This topic also connects to [[hoarding-working-examples]] from a different angle: hoarding is about accumulating *artifacts* (working code) for reuse; compound engineering is about accumulating *instructions* (how the agent should behave) for reuse. Both turn one-time effort into persistent leverage; they're complementary.
 
-A third compounding loop sits at the suite level rather than the harness level. [[agentic-testing]] describes the *manual finding → red/green TDD → permanent regression test* motion: anything caught during manual testing is fixed by writing a failing test first, then implementing the fix. Each catch becomes durable verification the next agent run inherits. The same loop shape — *transient signal → durable instruction* — works at three granularities: the test suite (per-feature), the repo's `CLAUDE.md`-style files (per-project), and the user/team-level system prompt (cross-project).
+A third compounding loop sits at the suite level rather than the harness level. [[agentic-testing]] describes the *manual finding → red/green TDD → permanent regression test* motion: anything caught during manual testing is fixed by writing a failing test first, then implementing the fix. Each catch becomes durable verification the next agent run inherits. The same loop shape — *transient signal → durable instruction* — works at four granularities now:
+
+1. **Test suite** (per-feature) — manual finding → red/green → permanent test.
+2. **Repo instructions** (per-project) — session lesson → `CLAUDE.md` / `AGENTS.md` edit.
+3. **System prompt** (per-user / per-role) — cross-project lessons → harness updates.
+4. **Swarm memory** (per-organization) — [[multi-agent-coordination|LangMem]] indexes workflows so prior runs are retrievable by future Worker Agents across teams.
+
+The fourth granularity comes from [[2026-05-26-agentic-engineering-swarms]] and is worth flagging as the **organization-scale analog** of compound engineering: where compound engineering accumulates *instructions* in an individual or team-level harness, LangMem accumulates *workflow indices, plans, and long-term state* shared across a swarm. Same motion, larger blast radius — and a different governance question (who owns and prunes the swarm's memory?). Reuse is the explicit goal: *"prior workflows to be indexed and reused. This significantly reduced onboarding overhead for repeat tasks."*
 
 ### What "the instructions" actually are
 
@@ -62,3 +69,4 @@ The aspirational endpoint Karpathy gestures at: *"I should be able to say 'build
 - [[2026-05-23-how-coding-agents-work]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
 - [[2026-05-26-agentic-manual-testing]]
+- [[2026-05-26-agentic-engineering-swarms]]

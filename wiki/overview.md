@@ -4,7 +4,7 @@ tags: [meta, agentic-engineering]
 created: 2026-05-22
 updated: 2026-05-26
 status: developing
-sources: 12
+sources: 13
 ---
 
 # Overview
@@ -15,7 +15,7 @@ The LLM keeps this page current. When a new source meaningfully shifts the pictu
 
 ## Current picture
 
-The wiki now rests on two primary voices: eleven chapters of [[simon-willison]]'s *Agentic Engineering Patterns* guide and [[andrej-karpathy]]'s [[2026-04-30-sequoia-ascent-karpathy|Sequoia Ascent 2026 fireside chat]]. Willison gives us the **practices and operational discipline**; Karpathy gives us the **paradigms and analytic frames** — see [[willison-vs-karpathy]] for the explicit cross-author comparison. Together they make a self-consistent argument across five layers.
+The wiki now rests on three voices. Two are the practitioner-side spine: eleven chapters of [[simon-willison]]'s *Agentic Engineering Patterns* guide and [[andrej-karpathy]]'s [[2026-04-30-sequoia-ascent-karpathy|Sequoia Ascent 2026 fireside chat]]. The third is the wiki's first enterprise / team-scale source: [[kumar-ramagopal|Kumar & Ramagopal]]'s [[2026-05-26-agentic-engineering-swarms|LangChain-blog write-up of a Cisco multi-agent coordination pilot]]. Willison gives us the **practices and operational discipline**; Karpathy gives us the **paradigms and analytic frames** (see [[willison-vs-karpathy]]); Kumar & Ramagopal give us the **control plane** that wraps the first two at organizational scale — and a meaningfully different definition of *"agentic engineering"* (see [[practitioner-discipline-vs-control-plane]]). Together the three make a self-consistent argument across five layers, plus a new sixth — the organization-scale operating model.
 
 ### 1. What the field is — paradigm and definition
 
@@ -51,6 +51,14 @@ The first named **anti-pattern**: filing PRs containing agent-generated code you
 
 For founders, the wedge that emerges: **valuable, verifiable, undertrained** domains. The most obvious verifiable domains (coding, math) are saturated by labs; many economically important domains have latent verifiable structure that hasn't been exploited.
 
+### 6. The team / organization side — the control plane
+
+[[multi-agent-coordination]] ([[kumar-ramagopal|Kumar & Ramagopal]], Cisco, on LangChain): once an organization runs many agents in parallel across many teams, the unit of automation is no longer *the developer + a coding agent in a session* but a **swarm of role-differentiated agents** with a **Leader Agent** providing shared prompts, a common tool gateway, long-term memory ([LangMem](https://langchain-ai.github.io/langmem/)), global observability ([LangSmith](https://www.langchain.com/langsmith)), and orchestration over LangGraph. Worker Agents talk **agent-to-agent via A2A**; non-A2A agents are wrapped in **MCP adapters**. The Worker Agent loop is *intent → plan + notify → execute + checkpoint → validate + persist.* Coding agents like Codex and Claude run *inside* Worker Agents as reasoning and code-generation engines — the practitioner-discipline literature still applies; it just gets industrialised inside the control plane.
+
+The Cisco pilot reports a **93% reduction in time-to-root-cause** across 20+ debug workflows (200+ engineering hours saved across 512 sessions / 70 users / one month) and a **65% reduction in execution time** across 15+ development workflows. The headline finding: *"PR review process itself became the bottleneck introduced by human-in-the-loop"* — once coordination overhead is compressed, the trust gate from [[agent-code-review]] becomes the rate limiter. Numbers are from a single enterprise with internal-baseline methodology and should be read with caveats; they are nonetheless the most concrete delivery-cycle numbers in the wiki.
+
+The Kumar & Ramagopal source also uses *"agentic engineering"* in a sense substantively different from the Willison/Karpathy practitioner discipline — multi-agent control plane vs. human-using-coding-agent practice — and the wiki carries both definitions side by side. [[practitioner-discipline-vs-control-plane]] is the cross-cutting comparison.
+
 ### Cross-cutting habits
 
 Four complementary habits sit underneath everything:
@@ -62,13 +70,13 @@ Four complementary habits sit underneath everything:
 
 ### State of the picture
 
-Two authors deep, but still single-perspective in the sense that both Willison and Karpathy are AI-positive practitioners writing from solo / small-team vantages. The wiki's blind spots are largely theirs — see "What's still missing" in [[willison-vs-karpathy]]: no adversarial perspective, light on team-scale coordination and evaluation methodology, no real vendor comparison, no enterprise framing.
+Three voices deep now. The practitioner-side blind spot around team-scale coordination, enterprise framing, and concrete delivery-cycle numbers — flagged in [[willison-vs-karpathy]] and prior lint passes — has been partially filled by [[kumar-ramagopal|Kumar & Ramagopal]]. The remaining gaps: still no adversarial / skeptical perspective; no security-first or compliance-first framing; no academic / empirical-quality studies; vendor comparison still thin; no source from a second enterprise to triangulate the Cisco numbers.
 
-The most load-bearing un-ingested external references are still: Shipper & Klaassen's [Every post on Compound Engineering](https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents); the linked [OpenAI Codex system prompt](https://github.com/openai/codex/blob/rust-v0.114.0/codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md); vendor subagent docs.
+The most load-bearing un-ingested external references are still: Shipper & Klaassen's [Every post on Compound Engineering](https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents); the linked [OpenAI Codex system prompt](https://github.com/openai/codex/blob/rust-v0.114.0/codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md); vendor subagent docs. Newly load-bearing: a non-Cisco enterprise multi-agent pilot for triangulation; A2A protocol specification(s); a skeptical / adversarial framing of swarm-of-agents claims.
 
 ## Open questions
 
-- **How do verification and review work at agent speed?** Parallel agents change the shape of code review; [[agent-code-review]] is a start; team-scale answer is still open.
+- **How do verification and review work at agent speed?** Parallel agents change the shape of code review; [[agent-code-review]] is a start; the Cisco pilot's *"PR review process itself became the bottleneck"* observation in [[2026-05-26-agentic-engineering-swarms]] sharpens the question. Open: which checks must remain human-only and which can move to a reviewer agent; whether *evidence-of-work-done* artifacts from [[agentic-testing]] meaningfully shorten human review time; whether a two-tier (agent-reviewer → human spot-check) gate is the right design. See [[practitioner-discipline-vs-control-plane]].
 - **Which old micro-tradeoffs flipped, and which didn't?** "Simple but time-consuming" debt class clearly flipped to yes; which decisions are still "no"?
 - **What does updating the agent harness look like day-to-day?** [[compound-engineering]] names the practice and we now know the substrate (system prompt + tools + repo-level files). Open: how the system prompt is pruned, what a good "compound step" looks like.
 - **How do you tell when you're on the model's rails before committing engineering effort?** [[verifiability]] describes the diagnosis but not the operational recipe.
@@ -77,4 +85,6 @@ The most load-bearing un-ingested external references are still: Shipper & Klaas
 - **When does reasoning mode pay off vs. cost too much?** ([[agent-architecture]])
 - **Safe envelope for shared-branch history rewriting** ([[git-with-agents]]).
 - **What other anti-patterns belong in [[agent-code-review]]?** Willison's chapter currently lists only one.
-- **Counter-perspectives.** Skeptics, empirical quality studies, security framings, enterprise contexts — still missing.
+- **Counter-perspectives.** Skeptics, empirical quality studies, security framings — still missing. Enterprise framing partly filled by [[2026-05-26-agentic-engineering-swarms]]; a second enterprise source for triangulation is now load-bearing.
+- **Vocabulary trajectory.** *"Agentic engineering"* is now in active use with two non-identical meanings ([[practitioner-discipline-vs-control-plane]]). Does the field settle on one, or do both stabilize? Worth watching the next sources.
+- **Safe envelope at swarm scale.** [[multi-agent-coordination]] systems have a different failure surface from single-coding-agent sessions (cascade failures, unauthorized actions, inter-agent prompt injection). The post mentions deterministic execution and authorized actions but doesn't go deep.
