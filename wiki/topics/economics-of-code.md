@@ -4,7 +4,7 @@ tags: [agentic-engineering, economics, habits, good-code, technical-debt, explor
 created: 2026-05-23
 updated: 2026-05-26
 status: developing
-sources: 7
+sources: 8
 ---
 
 # Economics of code
@@ -72,6 +72,10 @@ The implication for the cost story: the cheap-code surplus is partly a *conseque
 
 The practical reading: when scoping a project, ask not only "is this work cheap with an agent?" but also "is this work verifiable enough that the model is *good* at it?" The two questions trade off when you push toward less-verifiable domains (UI taste, code aesthetics, novel system design).
 
+### The return side — tokeconomics
+
+This page describes the *cost* of agent work — engineering time, then token cost as the next layer. [[andy-dev-dan]] in [[2026-05-28-andy-dev-dan-five-pillars]] supplies a complementary *return* lens: a 3-level funnel that gates the decision to deploy agents always-on (AFK). Token-maxing (L1) → useful tokens (L2) → token arbitrage / revenue capture (L3). Always-on agents are appropriate *only* at L3; before that, an always-running agent is paying token-tax 24/7. See [[tokeconomics]] for the full framing, including the **token tax** as the recurring cost of missing agent-native surfaces (the economic case for [[agent-native-infrastructure]]).
+
 ## Open questions
 
 - Which old intuitions are *actually* wrong now, and which are still load-bearing? Default-yes on every refactor is presumably not the answer either.
@@ -88,3 +92,4 @@ The practical reading: when scoping a project, ask not only "is this work cheap 
 - [[2026-05-23-subagents]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
 - [[2026-05-26-first-run-the-tests]]
+- [[2026-05-28-andy-dev-dan-five-pillars]]

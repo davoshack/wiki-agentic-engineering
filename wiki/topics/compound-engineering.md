@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, workflow, retrospectives, agent-instructions, system-prompts, long-term-memory]
 created: 2026-05-23
-updated: 2026-05-26
+updated: 2026-05-28
 status: developing
-sources: 5
+sources: 6
 ---
 
 # Compound engineering
@@ -34,6 +34,10 @@ A third compounding loop sits at the suite level rather than the harness level. 
 4. **Swarm memory** (per-organization) — [[multi-agent-coordination|LangMem]] indexes workflows so prior runs are retrievable by future Worker Agents across teams.
 
 The fourth granularity comes from [[2026-05-26-agentic-engineering-swarms]] and is worth flagging as the **organization-scale analog** of compound engineering: where compound engineering accumulates *instructions* in an individual or team-level harness, LangMem accumulates *workflow indices, plans, and long-term state* shared across a swarm. Same motion, larger blast radius — and a different governance question (who owns and prunes the swarm's memory?). Reuse is the explicit goal: *"prior workflows to be indexed and reused. This significantly reduced onboarding overhead for repeat tasks."*
+
+### Compound engineering ⊆ the software factory
+
+A complementary frame from [[andy-dev-dan]] in [[2026-05-28-andy-dev-dan-five-pillars]]: the **[[software-factory]]** wraps planning, spec, build, test, and review into a single-prompt pipeline. Compound engineering is the *substrate-level* loop that improves the harness over time; the factory is the *workflow-level* loop that uses that harness to produce features. They stack — a mature factory is itself a compounded artifact, and each project's compound step can refine either the harness *or* the factory's pipeline steps. Andy's *"build the system that builds the system"* is the workflow-level expression of the same motion compound engineering applies at the instruction level.
 
 ### What "the instructions" actually are
 
@@ -70,3 +74,4 @@ The aspirational endpoint Karpathy gestures at: *"I should be able to say 'build
 - [[2026-04-30-sequoia-ascent-karpathy]]
 - [[2026-05-26-agentic-manual-testing]]
 - [[2026-05-26-agentic-engineering-swarms]]
+- [[2026-05-28-andy-dev-dan-five-pillars]]

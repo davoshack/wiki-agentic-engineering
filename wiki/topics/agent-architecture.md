@@ -2,14 +2,14 @@
 type: topic
 tags: [agentic-engineering, agent-architecture, llm-fundamentals, tokens, system-prompts, harness, reasoning, ghosts-vs-animals, mental-model]
 created: 2026-05-23
-updated: 2026-05-26
+updated: 2026-05-28
 status: developing
-sources: 3
+sources: 4
 ---
 
 # Agent architecture
 
-How a coding agent is actually built under the hood. A **harness** that wraps an LLM, extending it with a system prompt and a set of callable tools, and runs the whole thing in a loop. This page goes deeper than [[coding-agents]] — that page defines what an agent *is*; this page describes how the pieces fit together.
+How a coding agent is actually built under the hood. A **harness** that wraps an LLM, extending it with a system prompt and a set of callable tools, and runs the whole thing in a loop. This page goes deeper than [[coding-agents]] — that page defines what an agent *is*; this page describes how the pieces fit together. For the *discipline* of building and customizing your own harness as a daily practice — including specialized harnesses, model fallbacks, multi-agent orchestration, and "one tool, many versions" specialization — see [[agent-harness-engineering]] ([[andy-dev-dan|Andy Dev Dan]]).
 
 ## Synthesis
 
@@ -110,3 +110,4 @@ The mechanics on this page describe *what* the agent is. Ghosts-not-animals is a
 - [[2026-05-23-how-coding-agents-work]]
 - [[2026-04-30-sequoia-ascent-karpathy]]
 - [[2026-05-26-agentic-manual-testing]]
+- [[2026-05-28-andy-dev-dan-five-pillars]]

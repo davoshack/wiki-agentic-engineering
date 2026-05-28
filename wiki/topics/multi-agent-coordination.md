@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, multi-agent, swarms, control-plane, langgraph, langsmith, langmem, mcp, a2a, observability, enterprise, team-scale]
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-05-28
 status: developing
-sources: 1
+sources: 2
 ---
 
 # Multi-agent coordination

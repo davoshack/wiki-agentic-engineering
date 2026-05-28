@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-05-26
+updated: 2026-05-28
 ---
 
 # Index
@@ -22,12 +22,14 @@ question, read this first to find relevant pages, then drill into them.
 
 - [[coding-agents]] — what an agent is (tools in a loop), why code execution is the defining capability, sync vs. async flavors, vibe-coding vs. agentic-engineering (Karpathy's canonical floor/ceiling framing).
 - [[agent-architecture]] — how a coding agent is actually built: LLM + system prompt + tools in a loop. Tokens, context windows, token caching, the tool-call protocol, reasoning mode, ghosts-not-animals mental model.
+- [[agent-harness-engineering]] — the discipline of building and customizing your own harness as daily practice. Out-of-box vendors are the floor; custom composable harnesses, specialized variants ("DevOps harness, testing harness, billing harness"), model routing, multi-agent orchestration. *"Specialization is the moat."*
 - [[software-3-0]] — Karpathy's paradigm progression (1.0 explicit code → 2.0 learned weights → 3.0 LLM-as-interpreter, context-window-as-program). Some apps should disappear into direct model transformations.
 
 ### Economics and analytic frames
 
 - [[economics-of-code]] — the cost of producing code has collapsed; the cost of producing *good* code (9-dimension checklist) has not; old engineering intuitions are due for an overhaul; spend the surplus on quality. Token-cost layer and the verifiability-of-coding explanation included.
 - [[verifiability]] — Karpathy's analytic frame: LLMs automate what you can verify. Jagged intelligence as a corollary; capability spikes where labs train heavily on verifiable RL.
+- [[tokeconomics]] — Andy Dev Dan's *return-side* lens: 3-level funnel from token-maxing → useful tokens → captured arbitrage; the **token tax** as the recurring cost of missing agent-native surfaces; AFK / always-on agents as the *output* of L3 rather than a default.
 
 ### Practices
 
@@ -36,6 +38,7 @@ question, read this first to find relevant pages, then drill into them.
 - [[git-with-agents]] — Git is a key tool for agent workflows; agents are fluent in basic and advanced Git, which lets the human be more ambitious. Prompt vocabulary, the "sort out this git mess" pattern, bisect, and history rewriting as editorial work.
 - [[subagents]] — dispatching a fresh copy of the agent with a new context window. Three flavors: exploratory (Claude Code's `Explore`), parallel (often on cheaper models like Haiku), specialist (code reviewer, test runner, debugger).
 - [[compound-engineering]] — end each project with a retrospective whose output is updated agent instructions (system prompt, harness, repo-level instruction files); quality compounds across runs. Karpathy's compact recipe (define context / tools / feedback loop / guardrails; let agents work; preserve understanding) is the target shape.
+- [[software-factory]] — Andy Dev Dan's ambitious prescription: *"build factories, not features."* Wrap planning, spec, build, test, and review into a single-prompt pipeline (AI Developer Workflows / ADWs / "dark factory"). Stacks on top of [[compound-engineering]]; aspirational endpoint is **ZTE = Zero Touch Engineering** (prompt → production).
 - [[agent-code-review]] — the human owns the first review pass on agent-generated code; characteristics of a good agentic PR; evidence-of-work-done signals.
 - [[agentic-testing]] — testing as the verification layer: `First run the tests` to seed sessions, `Use red/green TDD` for new code, manual testing (`python -c`, `curl`, Playwright/Rodney) for what the suite misses; manual findings feed back into the suite via red/green so verification compounds. Short prompts as compressed software-engineering discipline.
 
@@ -52,6 +55,7 @@ question, read this first to find relevant pages, then drill into them.
 - [[simon-willison]] — author of *Agentic Engineering Patterns*; practitioner-oriented, definitionally disciplined, frames many patterns as extensions of pre-LLM craft.
 - [[andrej-karpathy]] — co-founder of OpenAI; Tesla Autopilot; Eureka Labs. Paradigm-namer (Software 1.0/2.0/3.0; vibe coding; agentic engineering; verifiability; jagged intelligence; ghosts not animals). Originator of the LLM Wiki Pattern that inspired this wiki.
 - [[kumar-ramagopal]] — Renuka Kumar (Cisco, Principal SWE / Director) and Prashanth Ramagopal (Cisco, Senior Director of Engineering). Combined author page for a single co-authored LangChain-blog post on a Cisco multi-agent coordination pilot. First enterprise / team-scale vantage in the wiki, and the source of the wiki's second sense of *"agentic engineering"*.
+- [[andy-dev-dan]] — channel host of *agenticengineer.com*, seller of the *Tactical Agent Coding* course. Third practitioner-vantage voice; individual-senior-engineer scale; substrate-maximalist (*"models matter less and less"*). Read with the marketing caveat on his page.
 
 ## Syntheses
 
@@ -74,3 +78,4 @@ question, read this first to find relevant pages, then drill into them.
 - [[2026-05-26-red-green-tdd]] — Simon Willison, *Agentic Engineering Patterns*. Test-first development is a "fantastic fit" for agents; the red step (confirming tests fail before implementation) is load-bearing; `Use red/green TDD` is shorthand for the full discipline.
 - [[2026-05-26-agentic-manual-testing]] — Simon Willison, *Agentic Engineering Patterns*. Code execution is the defining capability of a coding agent; manual testing patterns (`python -c`, `curl` exploration, Playwright / agent-browser / Rodney for web UIs); Showboat for capturing exec'd commands and outputs as "show your work" artifacts; manual findings feed back into the suite via red/green.
 - [[2026-05-26-agentic-engineering-swarms]] — Renuka Kumar & Prashanth Ramagopal (Cisco), guest post on the LangChain blog (2026-04-17). Multi-agent coordination model with Worker / Leader agents on LangGraph + LangSmith + LangMem; A2A and MCP protocols; second sense of *"agentic engineering"*; concrete Cisco pilot numbers (93% debug-time, 65% dev-time reductions; 200+ hours saved across 512 sessions); *"PR review process itself became the bottleneck"*.
+- [[2026-05-28-andy-dev-dan-five-pillars]] — Andy Dev Dan, "Top #1 Opportunity for Senior Engineers: Agentic Engineering" (YouTube transcript). Five pillars: agent harness, software factory, extensible software, AFK / always-on agents (gated by tokeconomics), agentic access. Introduces *software factory / ADWs / ZTE*, *tokeconomics* + *token tax*, *custom harness as discipline*. Read with the channel-host / course-business caveat.

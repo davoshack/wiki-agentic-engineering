@@ -257,3 +257,41 @@ practitioner-discipline sense remains primary in [[agentic-engineering]] (area) 
 the control-plane sense is surfaced at the top of that page with pointers to
 [[multi-agent-coordination]] and [[practitioner-discipline-vs-control-plane]]. Worth
 revisiting whether the field settles on one meaning over time.
+
+## [2026-05-28] ingest | Andy Dev Dan, "Top #1 Opportunity for Senior Engineers: Agentic Engineering"
+
+Fourth primary voice added to the wiki. Andy Dev Dan is a YouTube channel host, owner
+of *agenticengineer.com*, and seller of two courses (*Tactical Agent Coding*, *Agent
+Horizon*). The source is a 26-minute "raw" monologue framed as a note-to-self,
+explicitly referencing Karpathy's Sequoia Ascent talk as validation. Three judgment
+calls confirmed with Juan: (a) spin out 3 new topic pages for genuinely new concepts
+rather than fold everything; (b) faithful summary with an "about this source" caveat
+at the top of the source page (channel-host with course business, several sales-shaped
+claims); (c) leave [[willison-vs-karpathy]] alone for now rather than extend into a
+multi-author synthesis — too much else in flux.
+
+Pages created:
+- Source: [[2026-05-28-andy-dev-dan-five-pillars]] (with top-of-page caveat)
+- Person: [[andy-dev-dan]] (third primary practitioner voice, individual-senior-engineer vantage)
+- Topics: [[agent-harness-engineering]], [[software-factory]], [[tokeconomics]]
+
+Pages updated:
+- [[agent-architecture]] — opening paragraph now points forward to [[agent-harness-engineering]] for the *discipline of building your own harness*; source count to 4.
+- [[agent-native-infrastructure]] — added a callout linking the **token tax** as the economic case for the same agent-native work Karpathy frames in capability terms; source count to 4.
+- [[economics-of-code]] — added a "return side — tokeconomics" subsection at the end of the verifiability layer; source count to 8.
+- [[compound-engineering]] — added a "compound engineering ⊆ the software factory" subsection (substrate-level loop + workflow-level loop stack); source count to 6.
+- [[multi-agent-coordination]] — added a "connection to solo-scale orchestration" subsection noting Andy's 3-tier orchestrator/team-leads/workers structure as the individual-engineer analog of Kumar & Ramagopal's Worker/Leader pattern; source count to 2.
+- [[agentic-engineering]] (area) — opening synthesis now names Andy as third practitioner voice; habits list expanded with three new bullets (agent-harness-engineering, software-factory, tokeconomics) and the token-tax sharpening on the existing agent-native-infrastructure bullet; source count to 14.
+- [[overview]] — promoted from three voices to four; expanded the cost-and-return discussion to three layers (engineering time / tokens / tokeconomics); added a substrate-maximalist paragraph naming the harness / factory / agentic-access stack; "state of the picture" rewritten with Andy's contributions and new remaining gaps (no primary PI-harness source; willison-vs-karpathy synthesis is now 2-of-4); source count to 14.
+- `wiki/index.md` — added [[agent-harness-engineering]] to Foundations, [[tokeconomics]] to Economics-and-analytic-frames, [[software-factory]] to Practices; new person entry; new source entry; updated date.
+
+The willison-vs-karpathy synthesis was deliberately left alone (per Juan). Worth
+revisiting in a future lint pass — adding Andy as a third practitioner column and
+Kumar/Ramagopal as the enterprise vantage would turn it into a 4-voice comparison.
+Could be a new "four-voices" synthesis rather than an extension.
+
+Vocabulary additions (now canonical in the wiki): *software factory / dark factory /
+ADWs / ZTE*, *tokeconomics / token tax / token arbitrage*, *AFK agents* (as L3
+deployment), *custom harness as discipline*, *specialization is the moat*, *"models
+matter less and less"* (substrate-maximalism). Worth tracking against future sources
+to see which terms persist and which fade.

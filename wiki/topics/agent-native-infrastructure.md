@@ -1,15 +1,17 @@
 ---
 type: topic
-tags: [agentic-engineering, agent-native, sensors, actuators, mcp, infrastructure, founder-opportunity]
+tags: [agentic-engineering, agent-native, sensors, actuators, mcp, infrastructure, founder-opportunity, token-tax]
 created: 2026-05-25
-updated: 2026-05-26
+updated: 2026-05-28
 status: developing
-sources: 3
+sources: 4
 ---
 
 # Agent-native infrastructure
 
 [[andrej-karpathy]]'s framing of what software should look like when the primary user is *an agent acting for a human* rather than the human directly. The compact form: most software today is built around humans clicking screens; the world has to be rewritten with **sensors** (turn world-state into digital information) and **actuators** (let agents change things), exposed through agent-first surfaces (markdown docs, CLIs, APIs, MCP servers, structured logs, copy-pasteable instructions).
+
+> **Economic sharpening: the token tax.** [[andy-dev-dan]] in [[2026-05-28-andy-dev-dan-five-pillars]] adds an economic lens on the same gap: every missing API / CLI / MCP surface is a *recurring cost paid in tokens* — *"anything your agent does that is unnecessary strictly because you haven't given it direct API access."* See [[tokeconomics]] for the full framing. Where Karpathy makes the *capability* case for agent-native infra, Andy makes the *cost* case: exposing a surface upfront saves the running token tax over every future invocation.
 
 ## Synthesis
 
@@ -82,3 +84,4 @@ The flip side of the thesis is a wedge. Founders building **net-new** infrastruc
 - [[2026-04-30-sequoia-ascent-karpathy]]
 - [[2026-05-26-agentic-manual-testing]]
 - [[2026-05-26-agentic-engineering-swarms]]
+- [[2026-05-28-andy-dev-dan-five-pillars]]
