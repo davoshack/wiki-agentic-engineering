@@ -360,3 +360,33 @@ Note: [[context-engineering]] and [[ralph-loop]] are stubs resting on this singl
 Ralph) source — flagged for a primary-source follow-up. The two harness-engineering voices both have
 commercial offerings (Andy's courses, Cole's Archon), so the harness-primacy thesis is now corroborated
 but still lacks a disinterested or skeptical source — the standing counter-perspective gap.
+
+## [2026-05-30] diagram | Cole Medin, harness engineering — visual map
+
+Built `wiki/syntheses/cole-medin-harness-engineering.excalidraw` following the project's
+`excalidraw-diagram` skill end-to-end. Six sections in one composition:
+
+1. **3-layer stack** (concentric rectangles, left) — LLM → coding agent → AI layer, mirroring
+   Cole's "wrapper around the model" metaphor structurally rather than just labeling it.
+2. **6 AI-layer components** (2×3 grid, center-right) — Rules, Skills, MCP, Codebase Search,
+   Hooks, Sub-agents; Hooks visually highlighted (orange) because Cole flags it as the
+   underused-but-most-leveraged component.
+3. **Hooks evidence panel** (dark code-style strip) — concrete callout of Cole's three favored
+   hook uses: `pre_tool_use`, `stop`, `post_edit`.
+4. **System Evolution band** — Mistake → Diagnose → Add rule/hook/skill → Improved harness
+   sequence with a dashed return arrow, anchored by the "every mistake becomes an opportunity"
+   quote.
+5. **Stage 2 / Foundational workflow** (bottom-left) — manual Plan / Implement / Validate
+   sessions with markdown handoff artifacts between them.
+6. **Ralph loop** (bottom-right) — automated pipeline inside a `while not done.txt:` dashed
+   enclosure: PRD → Plan agent → Implement → 3 parallel reviewers (security, correctness,
+   simplicity) → PR, with a bash snippet and the `done.txt → exit` escape branch.
+
+Render-view-fix loop: one defect on first render (Ralph-loop return arrow routed awkwardly
+*through* the dashed `while` enclosure, going down-and-back instead of looping around). Fixed by
+rerouting the arrow *over the top* of the pipeline (PR → up → left → down to Plan agent), which
+also reads more naturally as "loop back to the next iteration." Second render passed both the
+vision check and the defect check.
+
+Embedded in [[2026-05-29-cole-medin-harness-engineering]] under a new `## Diagram` section;
+added to [[index]] under Syntheses; `index.md` date bumped 2026-05-29 → 2026-05-30.

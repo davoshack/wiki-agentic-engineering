@@ -15,6 +15,11 @@ status: developing
 
 A ~15-minute explainer arguing that **harness engineering** — "building the wrapper around the model" — is "the next big thing for this year, just like [[context-engineering|context engineering]] was for last year," and that it is a *direct evolution* of context engineering rather than a wholly new thing. Cole breaks it into two stages: (1) engineering the **AI layer** *within a single coding-agent session*, and (2) the "peak evolution" of **orchestrating many coding-agent sessions** into an automated workflow (the [[ralph-loop|Ralph loop]] as the worked example). The throughline is *ownership*: **"every mistake becomes an opportunity to improve your harness"** — what he calls **system evolution**, with the human as the feed-forward operator.
 
+## Diagram
+
+![[cole-medin-harness-engineering.png]]
+*Visual map of Cole's argument: the three-layer stack (LLM → coding agent → AI layer), the six AI-layer components (with Hooks called out), the system-evolution feedback loop, and Stage 2's manual foundational workflow alongside the automated Ralph loop. Source: [[cole-medin-harness-engineering.excalidraw]] — built with the project's `excalidraw-diagram` skill.*
+
 ## Key takeaways
 
 ### Definition and the three-layer model

@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-05-29
+updated: 2026-05-30
 ---
 
 # Index
@@ -66,6 +66,7 @@ question, read this first to find relevant pages, then drill into them.
 - [[willison-vs-karpathy]] — the wiki's first cross-author synthesis. Willison gives practices and operational discipline; Karpathy gives paradigms and analytic frames. Where they overlap, where they diverge, what's still missing from both.
 - [[ghosts-and-the-bitter-lesson]] — anti-anthropomorphism at two stages: Sutton (don't encode your cognition intuitions into the *training*) and Karpathy (don't project your cognition intuitions onto the *resulting system*). The ghost is the artifact of taking Sutton seriously; jagged intelligence is the corollary of "scales with computation." Sutton not yet ingested.
 - [[practitioner-discipline-vs-control-plane]] — names the wiki's first definitional split: Willison/Karpathy use *agentic engineering* to mean the practitioner discipline (human + coding agent); Kumar & Ramagopal use it to mean the control plane (swarm of role-differentiated agents coordinated by a Leader). The two compose — coding agents are components inside Worker Agents — and the PR-review gate is exposed as both the trust mechanism and the rate limiter when the rest of the cycle compresses.
+- [[cole-medin-harness-engineering.excalidraw|cole-medin-harness-engineering]] *(diagram)* — visual map of Cole Medin's framework: three-layer stack (LLM → coding agent → AI layer), the six AI-layer components, the system-evolution feedback loop, and Stage 2's manual workflow alongside the automated Ralph loop. Embedded in [[2026-05-29-cole-medin-harness-engineering]].
 
 ## Sources
 
