@@ -2,9 +2,9 @@
 type: area
 tags: [agentic-engineering, meta]
 created: 2026-05-23
-updated: 2026-05-28
+updated: 2026-05-29
 status: developing
-sources: 14
+sources: 15
 ---
 
 # Agentic engineering
@@ -37,7 +37,7 @@ The human's job therefore moves up the stack. With typing no longer the bottlene
 - **[[agentic-testing|Wire the verifier into every session]]** — tests are the canonical reward signal. Seed sessions with `First run the tests`; build new code with `Use red/green TDD`; supplement with manual testing (`python -c`, `curl` exploration, Playwright/Rodney for web UIs). Each manual finding feeds back into the suite. Short prompts here compress substantial chunks of pre-existing software-engineering discipline.
 - **[[multi-agent-coordination|Zoom out to the control plane when many agents act together]]** — once an organization runs swarms of role-differentiated agents (Worker / Leader), the new substrate becomes coordination, audit, observability, and long-term memory rather than per-session craft. [[2026-05-26-agentic-engineering-swarms|Kumar & Ramagopal's Cisco pilot]] reports a 93% reduction in debug time-to-root-cause and observes that *"PR review process itself became the bottleneck introduced by human-in-the-loop"* once coordination overhead is compressed. The practitioner-discipline habits above don't go away; they get embedded inside Worker Agents.
 - **[[agent-native-infrastructure|Build for the agent, not just the human]]** — most software is still designed for humans clicking screens. Karpathy's frame: the world has to be rewritten with **sensors** (turn world-state into digital info) and **actuators** (let agents change things), exposed through markdown docs, CLIs, APIs, MCP servers, structured logs, copy-pasteable instructions. The MenuGen deployment story is the running benchmark for how mature the infrastructure layer is. [[andy-dev-dan|Andy Dev Dan]] sharpens the economic case for this work via the **token tax** (see [[tokeconomics]]): every missing surface is a recurring cost paid in tokens.
-- **[[agent-harness-engineering|Own and customize the substrate]]** — Andy's claim is that out-of-the-box harnesses (Claude Code, Codex, OpenCode) are the floor, not the ceiling. Building your own composable harness lets you specialize (DevOps harness, testing harness, billing harness) and route models per task. *"Specialization is the moat."*
+- **[[agent-harness-engineering|Own and customize the substrate]]** — Andy's claim is that out-of-the-box harnesses (Claude Code, Codex, OpenCode) are the floor, not the ceiling. Building your own composable harness lets you specialize (DevOps harness, testing harness, billing harness) and route models per task. *"Specialization is the moat."* [[cole-medin]] (a second, independent voice) supplies the structure: the harness is a three-layer stack (LLM → vendor coding-agent → the **AI layer you build**), and the AI layer has six components — rules, skills, MCP servers, codebase search, hooks, sub-agents. He frames the discipline as an evolution of [[context-engineering]] driven by a *system-evolution* mindset: **"every mistake becomes a rule."** Its peak form is **orchestrating many focused sessions** (the [[ralph-loop|Ralph loop]]) rather than overloading one.
 - **[[software-factory|Build factories, not features]]** — Andy's most ambitious prescription. The factory wraps planning, spec, build, test, and review into a single-prompt pipeline; the unit of engineering work moves from *the feature* to *the system that builds the feature*. Aspirational endpoint: **ZTE — Zero Touch Engineering** (prompt → production). Conceptually composes [[compound-engineering]] (instructions) + [[agent-harness-engineering]] (substrate) + [[agentic-testing]] (verification) + [[agent-code-review]] (governance) into one workflow.
 - **[[tokeconomics|Gate always-on agents on captured value, not token-spend]]** — three-level funnel: token-maxing (L1) → useful tokens (L2) → token arbitrage (L3). AFK / always-on agents are the *output* of L3, not a default. Pair with [[agent-native-infrastructure]] to minimize the token tax along the way.
 
@@ -68,3 +68,4 @@ The field is early. Best practices are being figured out in public, and the *Age
 - [[2026-05-26-agentic-manual-testing]]
 - [[2026-05-26-agentic-engineering-swarms]]
 - [[2026-05-28-andy-dev-dan-five-pillars]]
+- [[2026-05-29-cole-medin-harness-engineering]]

@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, workflow, retrospectives, agent-instructions, system-prompts, long-term-memory]
 created: 2026-05-23
-updated: 2026-05-28
+updated: 2026-05-29
 status: developing
-sources: 6
+sources: 7
 ---
 
 # Compound engineering
@@ -34,6 +34,12 @@ A third compounding loop sits at the suite level rather than the harness level. 
 4. **Swarm memory** (per-organization) — [[multi-agent-coordination|LangMem]] indexes workflows so prior runs are retrievable by future Worker Agents across teams.
 
 The fourth granularity comes from [[2026-05-26-agentic-engineering-swarms]] and is worth flagging as the **organization-scale analog** of compound engineering: where compound engineering accumulates *instructions* in an individual or team-level harness, LangMem accumulates *workflow indices, plans, and long-term state* shared across a swarm. Same motion, larger blast radius — and a different governance question (who owns and prunes the swarm's memory?). Reuse is the explicit goal: *"prior workflows to be indexed and reused. This significantly reduced onboarding overhead for repeat tasks."*
+
+### "Every mistake becomes a rule" — compound engineering as a mindset
+
+[[cole-medin]] ([[2026-05-29-cole-medin-harness-engineering]]) gives the same loop its sharpest practitioner statement and reframes it from a *practice* into a **mindset**. The pattern he names is the failure-attribution one: *"the agent does something dumb, the engineer blames the model, and the blame gets filed under 'wait for the next version.'"* The compounding mindset **rejects that** — because the failure is usually *legible*: agent broke a convention → add it to `agents.md`; agent ran a destructive command → add a hook that blocks it. **"Every mistake becomes a rule"** — *"an opportunity to improve your harness."*
+
+Cole calls this **system evolution**, and locates it precisely in [[agent-harness-engineering|the AI layer's]] six components (rules, skills, hooks, …). It maps cleanly onto granularities 2–3 above (repo instructions and the system prompt / harness), and is the same *transient signal → durable instruction* shape — but stated as the thing that distinguishes a harness *engineer* from someone merely *using* a coding agent and waiting for the next model. It also answers a question [[agent-harness-engineering]] used to carry: the discipline is **compounded modification of a base**, not a literal new harness each time.
 
 ### Compound engineering ⊆ the software factory
 
@@ -75,3 +81,4 @@ The aspirational endpoint Karpathy gestures at: *"I should be able to say 'build
 - [[2026-05-26-agentic-manual-testing]]
 - [[2026-05-26-agentic-engineering-swarms]]
 - [[2026-05-28-andy-dev-dan-five-pillars]]
+- [[2026-05-29-cole-medin-harness-engineering]]

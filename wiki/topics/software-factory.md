@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, software-factory, ADWs, dark-factory, ZTE, workflow]
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-05-29
 status: developing
-sources: 1
+sources: 2
 ---
 
 # Software factory
@@ -26,6 +26,15 @@ The thesis from [[2026-05-28-andy-dev-dan-five-pillars]]: you should stop being 
 - **Review** — automated review passes (cf. [[agent-code-review]]); human review still required per Willison's anti-pattern.
 
 The aspirational endpoint is **ZTE — Zero Touch Engineering**: prompt directly to production, no manual intervention. Andy explicitly flags this as *"super super advanced; that's where this all goes"* rather than the current target.
+
+### A second voice and a concrete minimal factory
+
+[[cole-medin]] ([[2026-05-29-cole-medin-harness-engineering]]) describes the **same orchestration shape from an independent vantage**, which is worth noting: when two practitioners who don't cite each other converge on "plan → implement → parallel review → ship, automated," the pattern is more than one influencer's framing. Cole's pipeline: explore a requirement → one agent **writes the plan** → hand the plan artifact to **implementation** → **multiple code-review agents in parallel** (security / correctness / simplicity) → if all pass, **create the PR**, else iterate.
+
+Two things Cole adds that sharpen the factory picture:
+
+- **A runnable minimal factory: the [[ralph-loop|Ralph loop]]** ([[geoffrey-huntley|Geoffrey Huntley]]). Where Andy describes the factory conceptually, the Ralph loop is a bare `while`-loop script that splits a PRD into tasks, runs sessions one at a time, and exits only on a `done.txt` marker. It's the smallest concrete instance of the factory idea, and [[cole-medin|Cole's]] **Archon** is pitched as a builder for customized versions of it.
+- **The token-overwhelm rationale.** Cole names *why* you decompose rather than one-shot: *"it does not matter how good the AI layer is… if you send too much into the LLM at once, it is going to fall flat on its face."* The factory isn't only about reuse — it's a context-management necessity (cf. [[subagents]]).
 
 ### How this relates to existing wiki patterns
 
@@ -68,3 +77,4 @@ A factory is what you build *because* the human can no longer be in every loop �
 ## Sources
 
 - [[2026-05-28-andy-dev-dan-five-pillars]]
+- [[2026-05-29-cole-medin-harness-engineering]]

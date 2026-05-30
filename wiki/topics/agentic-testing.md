@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, testing, tdd, manual-testing, browser-automation, prompts, verifiability]
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-05-29
 status: developing
-sources: 4
+sources: 5
 ---
 
 # Agentic testing
@@ -88,6 +88,16 @@ a UI element doesn't render, an edge case the suite never thought of. Mode-by-mo
 manual testing should be fixed with red/green TDD so the case becomes permanent
 regression protection. Manual testing and the automated suite compound rather than
 substitute.
+
+### Enforcing the verifier deterministically — the stop-validation hook
+
+Willison's three modes are *prompted* discipline — they rely on the agent (and the human) choosing to run and re-run tests. [[cole-medin]] ([[2026-05-29-cole-medin-harness-engineering]]) adds the **mechanical** complement: wire the verifier into the [[agent-harness-engineering|harness]] as a **hook** so it fires whether or not the agent remembers to. His three high-value testing-adjacent hooks:
+
+- **Stop-validation hook** — when the agent declares it's done, the harness **deterministically runs the unit tests, linting, and type-checking**; if anything fails, it **forces the agent to keep iterating** until they pass. This is `First run the tests` turned from a session-opening prompt into a session-*closing* gate that can't be skipped.
+- **Lint-after-every-edit** — keeps the codebase clean continuously, which Cole notes also makes *future* agent runs more reliable (less brittle code to navigate).
+- **Pre-tool-use security hook** — blocks destructive commands and prevents secrets from being read into context (a guardrail rather than a verifier, but the same hook surface).
+
+The contrast is the useful part: Willison shows how a *prompt* activates testing discipline the model already knows; Cole shows how a *hook* makes that discipline non-optional. The two stack — prompt the agent into the testing mindset, then let a stop hook hold it to the result. This is also the deterministic gate behind the [[ralph-loop|Ralph loop]]'s `done.txt` exit condition.
 
 ### Short prompts as compressed discipline
 
@@ -190,3 +200,4 @@ The headline observation from that pilot — *"PR review process itself became t
 - [[2026-05-26-red-green-tdd]]
 - [[2026-05-26-agentic-manual-testing]]
 - [[2026-05-26-agentic-engineering-swarms]]
+- [[2026-05-29-cole-medin-harness-engineering]]

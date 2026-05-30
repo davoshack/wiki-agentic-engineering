@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, subagents, context-management, parallelism, specialist-agents]
 created: 2026-05-23
-updated: 2026-05-26
+updated: 2026-05-29
 status: developing
-sources: 2
+sources: 3
 ---
 
 # Subagents
@@ -41,6 +41,15 @@ The word *"swarm"* gets used at two different scales in the literature and the w
 
 The two patterns are not in conflict — they sit at different organizational scales. A Worker Agent in a Kumar/Ramagopal swarm might internally dispatch Willison-style subagents (parallel file edits, specialist test runner, etc.) to do its work. *Parent → subagent* is the within-session axis; *Leader ↔ Worker → other Worker* is the cross-session, cross-team axis.
 
+### Subagents vs. orchestrating whole sessions — a third unit
+
+[[cole-medin]] ([[2026-05-29-cole-medin-harness-engineering]]) adds a distinction that sits *between* the two above. He lists **sub-agents as one of the six components of the [[agent-harness-engineering|AI layer]]**, but treats his "peak evolution" — stringing together **actual coding-agent sessions that hand artifacts off to each other** (the [[ralph-loop|Ralph loop]]) — as *"a true evolution from sub agents."* The difference he's pointing at:
+
+- A **sub-agent** is dispatched *within* a session and returns a result into the parent's loop (the within-session axis above).
+- An **orchestrated session** is a *full, independent* coding-agent run that writes a **markdown artifact** (a plan, an implementation, a review) which the *next session* picks up. Sessions don't share a parent context at all — the handoff is the artifact, not a tool return.
+
+Cole's practical rule is to run **plan / implement / validate in separate sessions** precisely to keep each one **token-efficient and focused** — the same context-preservation logic as subagents, applied one level up. His rationale is the harder constraint: *"it does not matter how good the AI layer is… if you send too much into the LLM at once, it is going to fall flat on its face."* So the wiki now tracks three units on the same spectrum: **sub-agent** (within session) → **orchestrated session** (artifact handoff, solo, e.g. Ralph loop / [[software-factory]]) → **Worker/Leader swarm** (persistent, cross-team, [[multi-agent-coordination]]).
+
 ### Cautionary note
 
 *"While it can be tempting to go overboard breaking up tasks across dozens of different specialist subagents, it's important to remember that the main value of subagents is in preserving that valuable root context and managing token-heavy operations. Your root coding agent is perfectly capable of debugging or reviewing its own output provided it has the tokens to spare."* The right question to ask before spinning out a specialist: *will this operation eat enough of the root context to hurt the parent's ability to finish the task?* If not, the simpler architecture wins.
@@ -64,3 +73,4 @@ The two patterns are not in conflict — they sit at different organizational sc
 
 - [[2026-05-23-subagents]]
 - [[2026-05-26-agentic-engineering-swarms]]
+- [[2026-05-29-cole-medin-harness-engineering]]

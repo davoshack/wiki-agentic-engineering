@@ -295,3 +295,68 @@ ADWs / ZTE*, *tokeconomics / token tax / token arbitrage*, *AFK agents* (as L3
 deployment), *custom harness as discipline*, *specialization is the moat*, *"models
 matter less and less"* (substrate-maximalism). Worth tracking against future sources
 to see which terms persist and which fade.
+
+## [2026-05-29] ingest | Cole Medin, "Harness Engineering: What Separates Top Agentic Engineers Right Now"
+
+YouTube transcript (PDF, bilingual EN/ES auto-transcript). Cole Medin — AI-coding YouTuber,
+creator of the open-source **Archon** harness builder. Source carries an Archon plug and a
+paid Google Cloud Agent CLI sponsor segment; substance is comparatively measured. This is the
+**second voice on [[agent-harness-engineering]]** (was single-source / Andy only), and the
+fifth voice overall in the wiki.
+
+Core contributions:
+- **Three-layer harness model**: LLM (reasoning) → vendor coding-agent you pick (Claude Code /
+  Codex / Pi) → the **AI layer you build**. The layer-2/3 distinction (rented vs. yours) is the
+  load-bearing one.
+- **Six AI-layer components**: global rules, skills, MCP servers, codebase search (LSP /
+  knowledge graphs), hooks, sub-agents.
+- **Harness engineering ≈ context engineering + control + ownership-mindset.** First source to
+  name [[context-engineering]] as the predecessor.
+- **"Every mistake becomes a rule" / system evolution** — compound engineering at the harness
+  layer, as a mindset. Resolves the standing open question on whether harness engineering is
+  "new harnesses" or "compounded modification of a base" (firmly the latter).
+- **Orchestration as peak evolution** — separate plan/implement/validate sessions with markdown
+  handoffs; parallel review agents (security/correctness/simplicity) gating PRs; the
+  [[ralph-loop|Ralph loop]] (Geoffrey Huntley) as the minimal runnable factory; token-overwhelm
+  as the rationale for decomposing.
+- **Hooks**: pre-tool-use security, stop-validation (deterministic tests/lint/typecheck + forced
+  iteration), lint-after-edit.
+
+Pages created (4):
+- Source: [[2026-05-29-cole-medin-harness-engineering]] (with Archon/sponsor caveat)
+- People: [[cole-medin]] (second harness-engineering voice), [[geoffrey-huntley]] (stub; Ralph-loop
+  originator, secondhand mention only)
+- Topics: [[ralph-loop]] (stub), [[context-engineering]] (stub; created to home repeated
+  cross-refs and the predecessor framing)
+
+Pages updated (9):
+- [[agent-harness-engineering]] — major: second voice; added the three-layer model, six-component
+  AI-layer inventory, the context-engineering-evolution decomposition, and "system evolution";
+  resolved the new-harness-vs-compound open question; source count 1 → 2.
+- [[compound-engineering]] — added "every mistake becomes a rule" as the mindset form of the same
+  loop at the harness layer; source count 6 → 7.
+- [[software-factory]] — Cole as independent corroborating voice for the orchestration shape; Ralph
+  loop as a concrete minimal factory; token-overwhelm rationale; source count 1 → 2.
+- [[subagents]] — added the third unit ("orchestrated session" between sub-agent and Worker/Leader
+  swarm); separate-session-per-phase with markdown handoffs; source count 2 → 3.
+- [[agentic-testing]] — added the deterministic stop-validation hook as the mechanical complement to
+  prompted testing discipline; source count 4 → 5.
+- [[agent-code-review]] — added parallel single-focus reviewer agents as the agent-reviewer tier of
+  the two-tier gate; source count 4 → 5.
+- [[andy-dev-dan]] — noted Cole as partial independent corroboration of harness-primacy (both have
+  commercial offerings).
+- [[agentic-engineering]] (area) — expanded the harness-engineering habit bullet with Cole's
+  structural model; source count 14 → 15.
+- [[overview]] — promoted four → five voices; added Cole's three-layer model + system evolution +
+  orchestration to the substrate section; rewrote "state of the picture" (harness engineering now
+  2-source; no adversarial voice yet since both harness voices have commercial offerings; new
+  load-bearing references: a primary harness-substrate source, a canonical context-engineering
+  source); source count 14 → 15.
+- `wiki/index.md` — added [[context-engineering]] + refreshed [[agent-harness-engineering]] line
+  (Foundations), [[ralph-loop]] (Practices), [[cole-medin]] + [[geoffrey-huntley]] (People), source
+  entry; updated date.
+
+Note: [[context-engineering]] and [[ralph-loop]] are stubs resting on this single (secondhand, for
+Ralph) source — flagged for a primary-source follow-up. The two harness-engineering voices both have
+commercial offerings (Andy's courses, Cole's Archon), so the harness-primacy thesis is now corroborated
+but still lacks a disinterested or skeptical source — the standing counter-perspective gap.

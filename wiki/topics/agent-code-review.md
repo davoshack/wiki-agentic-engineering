@@ -2,9 +2,9 @@
 type: topic
 tags: [agentic-engineering, code-review, pull-requests, collaboration, anti-patterns]
 created: 2026-05-23
-updated: 2026-05-26
+updated: 2026-05-29
 status: developing
-sources: 4
+sources: 5
 ---
 
 # Agent code review
@@ -56,6 +56,12 @@ The implication is not that the gate should be removed — Willison's anti-patte
 
 See [[practitioner-discipline-vs-control-plane]] for the cross-cutting framing.
 
+### Automated parallel reviewers as a pre-human gate
+
+[[cole-medin]] ([[2026-05-29-cole-medin-harness-engineering]]) supplies a concrete answer to "which checks can move to a reviewer agent": in his orchestrated pipeline, after implementation he runs **multiple code-review agents in parallel, each with a single focus** — *"this one focuses on security, this one correctness of the implementation, this one making sure it's as simple as it can be."* Only if **all pass** does the harness create the PR; otherwise it iterates on the implementation. This is the [[subagents|specialist code-reviewer subagent]], multiplied across dimensions and wired in as an automated gate *before* the PR exists.
+
+It's worth being precise about what this does and doesn't change: it shifts the **surface pass** (mechanical, dimension-by-dimension) onto agents, but it does **not** dissolve Willison's anti-pattern — the human still owns the PR they file. Read most charitably, Cole's parallel reviewers are the **agent-reviewer tier** of the two-tier gate the wiki is tracking: they make the human's spot-check smaller and better-evidenced, not unnecessary. Whether single-focus agent reviewers actually catch what matters (vs. producing confident-but-shallow approvals) is the open empirical question.
+
 ## Open questions
 
 - How does this scale to a team where multiple people are running async agents in parallel and PRs are piling up? Are there review-load patterns that work?
@@ -69,3 +75,4 @@ See [[practitioner-discipline-vs-control-plane]] for the cross-cutting framing.
 - [[2026-05-23-ai-should-help-us-produce-better-code]]
 - [[2026-05-26-agentic-manual-testing]]
 - [[2026-05-26-agentic-engineering-swarms]]
+- [[2026-05-29-cole-medin-harness-engineering]]
